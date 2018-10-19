@@ -10,10 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
 <title>Login</title>
 
-	
+
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -25,9 +24,22 @@
  
  	<!-- Jquery min.js 링크-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<!-- datepicker를 위한 링크 시작 -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  	<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- datepicker를 위한 링크 끝 -->
+
+
 <script>
 $(function(){
-	  $('#upload').change(function(){
+	   $('#upload').change(function(){
 	    var input = this;
 	    var url = $(this).val();
 	    var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
@@ -44,10 +56,38 @@ $(function(){
 	    {
 	      $('#img').attr('src', 'img/mainpage/avatar.png');
 	    }
-	  });
+	  }); 
 
 	});
+
+
 </script>
+
+
+ <script>
+
+ (function($) { $(document).ready(function(){
+
+	 $('#work_str_date').datepicker();
+	 $( "#work_str_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
+	    $('#work_end_date').datepicker();
+	    $( "#work_end_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
+
+  } );
+ })(jQuery);
+
+ 
+
+
+	
+  </script>
+
+
+
+
+
+
+
 </head>
    
 
@@ -146,7 +186,7 @@ $(function(){
             <br><br>
             <!-- 희망근무지역, 희망월급여 끝-->
             
-<!------------------------ 기술정보 입력 -------------------->
+<!------------------------  select 기술정보 입력1 -------------------->
             <div class="card-header">Technical information</div>
             <br>
 
@@ -158,7 +198,7 @@ $(function(){
               	  <div class="form-control"> 
               	  	<div>	
               	  	<span>
-	              	  <label>C
+	              	  <label>.NET
 		              	  <select name="major_tech">
 		              	    <option value="">선택</option>
 		              	    <option value="공통CODE">초급</option>
@@ -166,6 +206,28 @@ $(function(){
 		              	    <option value="공통CODE">고급</option>
 		              	  </select>
 	              	  </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>C
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>C#
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
 	              	</span>
 	              	&nbsp;&nbsp;
 	              	<span>
@@ -190,8 +252,8 @@ $(function(){
 	              	 </label>
 	              	</span>
 	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>
+	              	<!-- <span>
+	              	 <label>JS
 	              	  <select name="major_tech">
 	              	    	<option value="">선택</option>
 		              	    <option value="공통CODE">초급</option>
@@ -199,10 +261,10 @@ $(function(){
 		              	    <option value="공통CODE">고급</option>
 	              	  </select>
 	              	 </label>
-	              	</span>
+	              	</span> -->
 	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>.NET
+	              	<!-- <span>
+	              	 <label>JSP
 	              	  <select name="major_tech">
 	              	    	<option value="">선택</option>
 		              	    <option value="공통CODE">초급</option>
@@ -210,34 +272,166 @@ $(function(){
 		              	    <option value="공통CODE">고급</option>
 	              	  </select>
 	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>ASP
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>ASP.NET
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
+	              	</span> -->
               	  	</div>       	  
               	  </div>  
                 </div>
               </div>
+              
+              <br><br>
+               
+ <!------------------------ select 기술정보 입력 2번줄 -------------------->              
+              
+               <div class="form-group">
+              <div class="form-row"> 	
+               <div class="form-label-group"></div>
+              	<div class="col-md-12">
+              	  <div class="form-label-group" >
+              	  <div class="form-control"> 
+              	  	<div>	
+              	  	<span>
+	              	  <label>JS
+		              	  <select name="major_tech">
+		              	    <option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+		              	  </select>
+	              	  </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>JSP
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>SPRING
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>PHP
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>PYTHON
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	         
+              	  	</div>       	  
+              	  </div>  
+                </div>
+              </div>
+              
+            <br><br>  
+   <!------------------------ select 기술정보 입력 3번줄 -------------------->                
+              
+              <div class="form-group">
+              <div class="form-row"> 	
+               <div class="form-label-group"></div>
+              	<div class="col-md-12">
+              	  <div class="form-label-group" >
+              	  <div class="form-control"> 
+              	  	<div>	
+              	  	<span>
+	              	  <label>ORACLE
+		              	  <select name="major_tech">
+		              	    <option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+		              	  </select>
+	              	  </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>MYSQL
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>MSSQL
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>ANDROID
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>IOS
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	         
+              	  	</div>       	  
+              	  </div>  
+                </div>
+              </div>
+              
+              
+              
+              
+              
+ <!------------------------ select 디자인 언어 -------------------->               
+              
+              
+              
+              
+              
               <br><br><br>
+              
+              
               <div class="form-label-group">디자인언어</div>
               	<div class="col-md-12">
               	  <div class="form-label-group" >
@@ -291,7 +485,7 @@ $(function(){
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="text" id="clinent_nm" name=""clinent_nm"" class="form-control" placeholder="Client Name" required="required" autofocus="autofocus">
+                    <input type="text" id="clinent_nm" name="client_nm" class="form-control" placeholder="Client Name" required="required" autofocus="autofocus">
                     <label for="clinent_nm">Client Name</label>
                   </div>
                 </div>
@@ -301,6 +495,73 @@ $(function(){
                     <label for="client_loca1">Client Location1</label>
                   </div>
                 </div>
+                <br><br><br>
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="text" id="duty" name="duty" class="form-control" placeholder="duty" required="required">
+                    <label for="duty">Duty</label>
+                  </div>
+                </div>
+                
+                 <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="text" id="task" name="task" class="form-control" placeholder="task" required="required">
+                    <label for="task">Task</label>
+                  </div>
+                </div>
+                 <br><br><br>
+                 <div class="col-md-6">
+                  <div class="form-label-group"> 
+                   <input type="text" id="work_str_date" name="work_str_date" class="form-control" placeholder="datepicker" required="required"/>              
+                    <label for="work_str_date">Work Start Date</label>
+                   </div>
+                </div>
+            
+                 <div class="col-md-6">
+                  <div class="form-label-group"> 
+                    <input type="text" id="work_end_date" name="work_end_date" class="form-control" placeholder="work_end_date" required="required"/>
+                    <label for="work_end_date">Work end date</label>
+                   </div>
+                </div>
+                
+                <br><br><br>
+                
+                <div class="col-md-12">
+                  <div class="form-label-group"> 
+                    <textarea type="text" id="contents" name="contents" class="form-control" placeholder="상세 개발 내용 기입" required="required"></textarea>
+                     <label for="contents"></label>
+                   </div>
+                </div>
+                
+                <br><br><br>
+                
+                <div class="col-md-6">
+                  <div class="form-label-group"> 
+                    <input type="text" id="use_tech_1" name="use_tech_1" class="form-control" placeholder="use_tech_1" required="required"/>
+                    <label for="use_tech_1">사용기술1</label>
+                   </div>
+                </div>
+                
+                 <div class="col-md-6">
+                  <div class="form-label-group"> 
+                    <input type="text" id="use_tech_2" name="use_tech_2" class="form-control" placeholder="use_tech_2" required="required"/>
+                    <label for="use_tech_2">사용기술2</label>
+                   </div>
+                </div>
+                
+                  <br><br><br>
+                  
+                   <div class="col-md-12">
+                  <div class="form-label-group"> 
+                    <input type="text" id="work_money" name="work_money" class="form-control" placeholder="work_money" required="required"/>
+                    <label for="work_money">Work money</label>
+                   </div>
+                </div>
+               
+                  
+                
+                
+                
               </div>
             </div>
 <!---------------------- 경력정보 입력 끝------------------------->
@@ -314,7 +575,7 @@ $(function(){
         </div>
       </div>
     </div>
-
+	          
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
