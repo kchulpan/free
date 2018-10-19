@@ -193,20 +193,20 @@ a {
 			var project_nm = $(this).find(".proj_nm").html();
 			var project_str_date = $(this).find(".proj_str_date").html();
 			var project_end_date = $(this).find(".proj_end_date").html();
-			var client_id = $(this).find(".client_id").val();
+			var client_id = $(this).find(".client_id").html();
 			var involve_num = $(this).find(".involve_num").html();
 			var field_1 = $(this).find(".field_1").html();
 			var field_2 = $(this).find(".field_2").val();
 			var remark = $(this).find(".remark").children("p").html();
 			var need_tech = $(this).find(".need_tech").html();
-			var client_nm = $(this).find(".client_nm").html();
+			 var client_nm = $(this).find(".client_nm").html(); 
 
 			console.log(proj_id);
 			console.log(charge_id);
 			console.log(proj_nm);
 			console.log(proj_str_date);
 			console.log(proj_end_date);
-			console.log(client_id);
+			console.log('고객사'+client_id);
 			console.log(involve_num);
 			console.log(field_1);
 			console.log(field_2);
@@ -229,8 +229,8 @@ a {
 			$(".modal-body #fid_2").val(field_2);
 			$(".modal-body #rmark").val(remark);
 			$(".modal-body #need_tec").val(need_tech);
-			$(".modal-body #cli_nm").val(client_nm);
-
+		/* 	$(".modal-body #cli_nm").val(client_nm);
+ */
 		})
 	});
 </script>
@@ -247,17 +247,17 @@ a {
 		});
 	});
 </script>
-<script>
+<!-- <script>
 	$(document).ready(function(){
-		$('#project').addClass('top_menu_active');
-		$('#project').find('i').addClass('menu_icon_active');
+		$('#inputModal').addClass('top_menu_active');
+		$('#inputModal').find('i').addClass('menu_icon_active');
 		
 		 $( "#project_str_date" ).datepicker();
 		 $( "#project_str_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
 		 $( "#project_end_date" ).datepicker();
 		 $( "#project_end_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
 	});
-</script>
+</script> -->
 </head>
 <!-------------------------------- body ---------------------------------------->
 <body>
@@ -324,11 +324,11 @@ a {
 							              <input type="text" name="proj_nm"class="form-control" id="project_nm" placeholder="프로젝트 이름을 입력하세요" required>
 							            </div>
 							            <div class="form-group">
-							              <label for="datepicker">프로젝트 기간</label>
+							              <label for="proj_date">프로젝트 기간</label>
 							            
 						              	  <div>
-						              		<input type="text" name="proj_str_date" class="form-control" id="proj_str_date" style="width:48%; float:left;" placeholder="시작일을 입력하세요" >
-						              		<input type="text" name="proj_end_date" class="form-control" id="proj_end_date" style="width:48%; float:right;" placeholder="종료일을 입력하세요" >
+						              		<input type="text" name="proj_str_date" class="form-control" id="project_str_date" style="width:48%; float:left;" placeholder="시작일을 입력하세요" >
+						              		<input type="text" name="proj_end_date" class="form-control" id="project_end_date" style="width:48%; float:right;" placeholder="종료일을 입력하세요" >
 						              	  </div>
 							           </div>
 							            <div class="form-group">
