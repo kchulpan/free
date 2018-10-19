@@ -27,7 +27,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/mainpage/sb-admin.css" rel="stylesheet">
-    
+
 </head>
    
 
@@ -41,11 +41,11 @@
             <h4>Forgot your password?</h4>
             <p>Enter your email address and we will send you instructions on how to reset your password.</p>
           </div>
-          <form>
+          <form action="/EmailSend" method="GET">
             <div class="form-group">
               <div class="form-label-group">
                 <input type="text" id="inputId" name="freeln_phone" class="form-control" placeholder="아이디를 입력하세요" required="required" autofocus="autofocus">
-                <label for="inputId">아이디를 입력하세요</label>
+                <label for="inputId">"-"없이 전화번호를 입력하세요</label>
               </div>
             </div>
             <div class="form-group">
@@ -54,7 +54,7 @@
                 <label for="inputEmail">이메일을 입력하세요</label>
               </div>
             </div>
-            <a class="btn btn-primary btn-block" href="/freeLnLostPwd">비밀번호 재설정</a>
+            <input type="submit" id="email_validate" class="btn btn-primary btn-block" value="이메일로 비밀번호 발송">
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="/Register">회원가입</a>

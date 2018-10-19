@@ -39,7 +39,13 @@
 
 	<!-- js -->
 	<script src="js/include/subpage.js"></script>
-	
+	<script>
+		$(document).ready(function(){
+			$('#charge').addClass('top_menu_active');
+			$('#charge').find('i').addClass('menu_icon_active');
+			/* $('.btn-group > button:nth-of-type(1)').focus(); */
+		});
+	</script>
 	
 	<!-- modal -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>

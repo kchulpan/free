@@ -1,6 +1,7 @@
 package free.email.service.impl;
 
 import java.io.File;
+import java.util.Map;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -9,10 +10,10 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import free.email.service.MailService;
+import free.email.service.MemberService;
 
 @Service
-public class MailServiceImpl implements MailService{
+public class MailServiceImpl implements MemberService{
 	// org.springframework.mail.javamail.JavaMailSender
 
 	private JavaMailSender javaMailSender;
@@ -48,4 +49,10 @@ public class MailServiceImpl implements MailService{
         }
         return false;
     }
+
+	@Override
+	public String getPw(Map<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
