@@ -146,34 +146,19 @@ $(function(){
             <br><br>
             <!-- 희망근무지역, 희망월급여 끝-->
             
-            <!-- 기술정보 입력 -->
+<!------------------------ 기술정보 입력 -------------------->
             <div class="card-header">Technical information</div>
             <br>
-<!--                         <div class="form-group">
-              <div class="form-row">
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="freeln_nm" name="freeln_nm" class="form-control" placeholder="Full name" required="required" autofocus="autofocus">
-                    <label for="freeln_nm">Full name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="freeln_phone" name="freeln_phone" class="form-control" placeholder="Cell Phone ex)010-1111-2222" required="required">
-                    <label for="freeln_phone">Cell Phone ex)010-1111-2222</label>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- 기술정보 폼 여기다 코딩 -->
+
             <div class="form-group">
               <div class="form-row"> 	
                <div class="form-label-group">개발언어</div>
               	<div class="col-md-12">
               	  <div class="form-label-group" >
-              	  <div class="form-control">        	  
+              	  <div class="form-control"> 
+              	  	<div>	
               	  	<span>
-	              	  <label>c언어
+	              	  <label>C
 		              	  <select name="major_tech">
 		              	    <option value="">선택</option>
 		              	    <option value="공통CODE">초급</option>
@@ -184,7 +169,7 @@ $(function(){
 	              	</span>
 	              	&nbsp;&nbsp;
 	              	<span>
-	              	 <label>c++
+	              	 <label>C++
 	              	  <select name="major_tech">
 	              	    	<option value="">선택</option>
 		              	    <option value="공통CODE">초급</option>
@@ -193,6 +178,62 @@ $(function(){
 	              	  </select>
 	              	 </label>
 	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>JAVA
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>.NET
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>ASP
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+	              	&nbsp;&nbsp;
+	              	<span>
+	              	 <label>ASP.NET
+	              	  <select name="major_tech">
+	              	    	<option value="">선택</option>
+		              	    <option value="공통CODE">초급</option>
+		              	    <option value="공통CODE">중급</option>
+		              	    <option value="공통CODE">고급</option>
+	              	  </select>
+	              	 </label>
+	              	</span>
+              	  	</div>       	  
               	  </div>  
                 </div>
               </div>
@@ -225,21 +266,44 @@ $(function(){
               	  </div>
                 </div>
               </div>
-<!--                 <input type="email" id="freeln_mail" name="freeln_mail" class="form-control" placeholder="Email address" required="required">
-                <label for="freeln_mail">Email address</label> -->
+              <br><br><br>
+           <!---------   기타언어 입력 ----------->
+             <div class="form-label-group">기타 기술정보</div>
+              	<div class="col-md-12">
+              	  <div class="form-label-group" >       	
+                <input type="text" id="add_tech" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
+                <label for="add_tech">항목에 없는 기술정보를 입력하세요</label>
+              </div>
+            </div>
+      	   <!---------   기타언어 입력 끝----------->
               </div>
             </div>
             
-            <!-- 기술정보 입력 끝-->
+<!---------------------------- 기술정보 입력 끝----------------------->
+            <br><br><br>
             
-            <!-- 경력정보 입력 -->
+            
+<!---------------------- 경력정보 입력 ------------------------->
             <div class="card-header">Experience information</div>
+            <br>
             
-            
-             <!-- 경력정보 폼 여기다 코딩 -->
-            
-            
-            <!-- 경력정보 입력 끝-->
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="text" id="clinent_nm" name=""clinent_nm"" class="form-control" placeholder="Client Name" required="required" autofocus="autofocus">
+                    <label for="clinent_nm">Client Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="text" id="client_loca1" name="client_loca1" class="form-control" placeholder="Client Location" required="required">
+                    <label for="client_loca1">Client Location1</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!---------------------- 경력정보 입력 끝------------------------->
             
             <a class="btn btn-primary btn-block" href="login.html">Register</a>
           </form>
@@ -256,39 +320,7 @@ $(function(){
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-
-
-<%--   <div style="text-align:center">
-  <caption><h2>로그인</h2></caption>
-  </div>
-  <form action="/SubPage" method="GET">
-  <div class="font">
-   <input type="text" class="userid" id="userid" name="userid" placeholder="아이디 입력"  />  
-  </div>
-  
-  <div class="font">
-	<input type="password" class="password" name="password" placeholder="비밀번호 입력" />
-  </div>
-
-
-  <button class="login" >로그인</button>
-  </form>
-  <form action="/Freelancer" method="GET">
-  	<button class="login" >프리랜서페이지로 이동</button>
-  </form>
-
-
-  
-  </br>
-  <div class="register">
-   <div class="font2">아이디 저장<input type="checkbox"></input></div>
-  <div class="font2"><a href="">아이디찾기</a>/</div>
-  <div class="font2"><a href="">비밀번호 찾기</a></div>
-  
-  </div> --%>
-  
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
  
 </body>
 </html>
