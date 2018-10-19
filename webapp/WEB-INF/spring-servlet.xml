@@ -58,21 +58,25 @@
              ref="sqlSessionFactory"></constructor-arg>    
     </bean>
 
-<!-- 비밀번호 분실시 메일로 전송 -->    
-	<bean id="mailSender" class = "org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="host" value="smtp.gmail.com" />
-		<property name="port" value="587" />
-		<property name="username" value="아이디@gmail.com" />
-		<property name="password" value="비밀번호" />
-		<property name="javaMailProperties">
-			<props>
-				<prop key="mail.transport.protocol">smtp</prop>
-				<prop key="mail.smtp.auth">true</prop>
-				<prop key="mail.smtp.starttls.enable">true</prop>
-				<prop key="mail.debug">true</prop>
-			</props>
-		</property>
-	</bean>
+<!-- 이메일 관련 -->
+<!-- <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    <property name="host" value="smtp.gmail.com" />
+    <property name="port" value="587" />
+    <property name="username" value="아이디@gmail.com" />
+    <property name="password" value="비밀번호" />
+    <property name="javaMailProperties">
+        <props>
+            <prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+            <prop key="mail.smtp.starttls.enable">true</prop>
+            <prop key="mail.smtp.auth">true</prop>
+        </props>
+    </property>
+</bean>
+<bean id="mailService" class="service.other.MailServiceImpl">
+    <property name="javaMailSender" ref="javaMailSender" />
+</bean> -->
+
+
     
 <!-- MultipartResolver 설정, upload 용량 제한(단위:byte)
     <bean id="multipartResolver"
