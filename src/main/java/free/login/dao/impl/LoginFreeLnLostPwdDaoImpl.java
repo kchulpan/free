@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import free.login.dao.LoginFreeLnLostPwdDao;
 
-@Repository
+@Repository("loginFreeLnLostPwdDao")
 public class LoginFreeLnLostPwdDaoImpl implements LoginFreeLnLostPwdDao
 {
 	@Autowired
