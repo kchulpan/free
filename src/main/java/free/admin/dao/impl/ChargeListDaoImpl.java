@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import free.admin.dao.ChargeListDao;
 import free.admin.vo.ChargeListVo;
 
-@Repository
+@Repository("chargeListDao")
 public class ChargeListDaoImpl implements ChargeListDao
 {
 	@Autowired

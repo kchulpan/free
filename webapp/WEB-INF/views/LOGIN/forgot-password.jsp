@@ -44,11 +44,17 @@
           <form>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Enter email address" required="required" autofocus="autofocus">
+                <input type="text" id="inputId" name="freeln_phone" class="form-control" placeholder="아이디를 입력하세요" required="required" autofocus="autofocus">
+                <label for="inputId">아이디를 입력하세요</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" name="freeln_mail" class="form-control" placeholder="Enter email address" required="required" autofocus="autofocus">
                 <label for="inputEmail">이메일을 입력하세요</label>
               </div>
             </div>
-            <a class="btn btn-primary btn-block" href="/">비밀번호 재설정</a>
+            <a class="btn btn-primary btn-block" href="/freeLnLostPwd">비밀번호 재설정</a>
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="/Register">회원가입</a>

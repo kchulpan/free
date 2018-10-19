@@ -10,42 +10,42 @@ import free.admin.dao.ChargeListDao;
 import free.admin.service.ChargeListService;
 import free.admin.vo.ChargeListVo;
 
-@Service
+@Service("chargeListService")
 public class ChargeListServiceImpl implements ChargeListService
 {
 	@Autowired
-	ChargeListDao chargeListdDao;
+	ChargeListDao chargeListDao;
 
 	@Override
 	public List<ChargeListVo> chargeList(HashMap<String,Object> map) 
 	{
-		List<ChargeListVo> chargeList = chargeListdDao.chargeList(map);
+		List<ChargeListVo> chargeList = chargeListDao.chargeList(map);
 		return chargeList;
 	}
 
 	@Override
 	public List<ChargeListVo> chargeDetail(HashMap<String, Object> map) 
 	{
-		List<ChargeListVo> chargeDetail = chargeListdDao.chargeDetail(map);
+		List<ChargeListVo> chargeDetail = chargeListDao.chargeDetail(map);
 		return chargeDetail;
 	}
 
 	@Override
 	public void chargeUpdate(HashMap<String, Object> map) 
 	{
-		chargeListdDao.chargeUpdate(map);
+		chargeListDao.chargeUpdate(map);
 		
 	}
 
 	@Override
 	public void ChargeNewInsert(HashMap<String, Object> map) 
 	{
-		chargeListdDao.ChargeNewInsert(map);
+		chargeListDao.ChargeNewInsert(map);
 	}
 
 	@Override
 	public void chargeDelete(HashMap<String, Object> map) {
-		chargeListdDao.chargeDelete(map);
+		chargeListDao.chargeDelete(map);
 		
 	}
 
