@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+  <mapper namespace="Project">
+  	<!-- 결과담을 Map 작성 -->
+      <resultMap id="ProjectListMap" type="free.admin.vo.ProjectListVo">
+      <result property="rownum"            column="ROWNUM"        javaType="int" />
+      <result property="proj_id"           column="PROJ_ID"       javaType="string" />
+      <result property="proj_nm"           column="PROJ_NM"       javaType="string" />
+      <result property="proj_str_date"     column="PROJ_STR_DATE" javaType="string" />
+      <result property="proj_end_date"     column="PROJ_END_DATE" javaType="string" />
+      <result property="client_id"         column="CLIENT_ID"     javaType="string" />
+      <result property="client_nm"         column="CLIENT_NM"     javaType="string" />
+      <result property="need_tech"         column="NEED_TECH"     javaType="String" />
+      <result property="field_1"           column="FIELD_1"       javaType="String" />
+      <result property="field_2"           column="FIELD_1"       javaType="String" />
+      <result property="involve_num"       column="INVOLVE_NUM"   javaType="string" />
+      <result property="charge_id"         column="CHARGE_id"     javaType="String" />    
+      <result property="charge_nm"         column="CHARGE_NM"     javaType="String" />    
+      <result property="remark"            column="REMARK"        javaType="String" />    
+      <result property="use_yn"            column="USE_YN"        javaType="String" />    
+    </resultMap> 	
+  
+		 <insert id="ProjectInsert"
+				statementType="CALLABLE">
+			{CALL PKG_PROJECT.PROC_PROJECT_INSERT(
+			<!-- #{proj_id, mode=IN, jdbcType=VARCHAR}, -->
+			#{proj_nm, mode=IN, jdbcType=VARCHAR},
+			#{proj_str_date, mode=IN, jdbcType=VARCHAR},
+        	#{proj_end_date, mode= IN, jdbcType=VARCHAR},
+        	#{client_id, mode=IN, jdbcType=VARCHAR},
+		    #{involve_num, mode=IN, jdbcType=VARCHAR},
+		    #{field_1, mode=IN, jdbcType=VARCHAR},
+		    #{field_2, mode=IN, jdbcType=VARCHAR},
+		    #{remark, mode=IN, jdbcType=VARCHAR},
+		    #{need_tech, mode=IN, jdbcType=VARCHAR},
+		    #{use_yn, mode=IN, jdbcType=VARCHAR},
+		    #{charge_id, mode=IN, jdbcType=VARCHAR}
+			)}
+		
+		
+		
+		</insert>
+		  	 
+  	
+   	<select id="ProjectList"
+  			statementType="CALLABLE"
+  			parameterType= "hashmap"
+  			resultType="free.admin.vo.ProjectListVo">
+		{CALL PKG_PROJECT.PROC_PROJECT_LIST(
+		#{result,  mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap=ProjectListMap}
+		)}
+  	</select>
+  	<select id="ProjectDetail"
+  			statementType="CALLABLE"
+  			parameterType= "hashmap"
+  			resultType="free.admin.vo.ProjectListVo">
+		{CALL PKG_PROJECT.PROC_PROJECT_DETAIL(
+		#{proj_id, mode=IN, jdbcType=VARCHAR},
+		#{result,  mode=OUT, jdbcType=CURSOR, javaType=RESULTSET, resultMap=ProjectListMap}
+		)}
+  	</select>
+  	
+  	  	<update id="ProjectUpdate" statementType="CALLABLE">
+  		{CALL PKG_PROJECT.PROC_PROJECT_UPDATE(
+  		#{proj_id, mode=IN, jdbcType=VARCHAR},
+  		#{charge_id, mode=IN, jdbcType=VARCHAR},
+  		#{proj_nm, mode=IN, jdbcType=VARCHAR},
+  		#{proj_str_date, mode=IN, jdbcType=VARCHAR},
+  		#{proj_end_date, mode=IN, jdbcType=VARCHAR},
+  		#{client_id, mode=IN, jdbcType=VARCHAR},
+  		#{involve_num, mode=IN, jdbcType=VARCHAR},
+  		#{field_1, mode=IN, jdbcType=VARCHAR},
+  		#{field_2, mode=IN, jdbcType=VARCHAR},
+  		#{remark, mode=IN, jdbcType=VARCHAR},
+  		#{need_tech, mode=IN, jdbcType=VARCHAR},
+  		#{use_yn, mode=IN, jdbcType=VARCHAR}
+  		)}
+  	</update>
+  	 <delete id="ProjectDelete"
+  			statementType="CALLABLE">
+  		{CALL PKG_PROJECT.PROC_PROJECT_DELETE(
+  		#{proj_id, mode=IN, jdbcType=VARCHAR}
+
+  		)}		
+    </delete>
+  	<!--
+  	<select id="BoardContent"
+  			statementType="CALLABLE"
+  			parameterType="">
+		{CALL PKG_BOARD.PROC_BOARD_CONTENT(
+		#{idx, mode=IN,  jdbcType=INTEGER},
+		#{result,  mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap=BoardListMap}
+		)}
+  	</select>
+  	
+  	<delete id="BoardDelete"
+  			statementType="CALLABLE"
+  			parameterType="">
+  			parameterType 은 전달받는 값의 Type임
+  			전달받는 값이 없을때는 쓸 필요없음
+		{CALL PKG_BOARD.PROC_BOARD_DELETE(
+		#{idx, mode=IN,  jdbcType=INTEGER}
+		)}
+  	</delete>
+  	
+  	<update id="BoardUpdate" statementType="CALLABLE">
+  		{CALL PKG_BOARD.PROC_BOARD_UPDATE(
+		#{idx, mode=IN,  jdbcType=INTEGER},
+		#{title, mode=IN,  jdbcType=VARCHAR},
+		#{cont, mode=IN,  jdbcType=VARCHAR}
+		)}
+  	</update> -->
+  </mapper>
