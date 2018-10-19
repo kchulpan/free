@@ -1,3 +1,4 @@
+package free.client.serviceImol;
 /*package free.client.serviceImol;
 
 import java.io.PrintWriter;
@@ -17,14 +18,14 @@ public class FreeLnServiceImpl implements FreeLnService {
 	private FreeLnDao freeLnDao;
 	
 	
-	//¾ÆÀÌµð Áßº¹°Ë»ç
+	//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
 	@Override
 	public void check_id(String freeLn_id, HttpServletResponse response) throws Exception {
 		PrintWriter out = response.getWriter();
 		out.println(freeLnDao.check_id(freeLn_id));
 	}
 	
-	//ÀÌ¸ÞÀÏ Áßº¹°Ë»ç
+	//ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
 
 	
 	

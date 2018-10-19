@@ -108,7 +108,7 @@ $(function(){
 					  	<img id="img" alt="사진을 올려주세요"  src="#" width="225" height="300">
 					  </div>
 					  <div>
-					  	<input type="file" id="upload" name="upload">
+					  	<input type="file" id="upload" name="img_nm">
 					  </div>
 					  <br><br>
 					</article>
@@ -465,7 +465,7 @@ $(function(){
              <div class="form-label-group">기타 기술정보</div>
               	<div class="col-md-12">
               	  <div class="form-label-group" >       	
-                <input type="text" id="add_tech" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
+                <input type="text" id="use_tech1" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
                 <label for="add_tech">항목에 없는 기술정보를 입력하세요</label>
               </div>
             </div>

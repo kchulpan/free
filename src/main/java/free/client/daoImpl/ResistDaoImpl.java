@@ -1,3 +1,4 @@
+package free.client.daoImpl;
 /*package free.client.daoImpl;
 
 import org.apache.ibatis.session.SqlSession;
@@ -14,19 +15,19 @@ public class FreeLnDaoImpl implements FreeLnDao {
 	private SqlSession sqlSession = null;
 	
 	@Override
-	//¾ÆÀÌµð Áßº¹°Ë»ç
+	//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
 	public int check_id(String freeln_id) throws Exception{
 		return sqlSession.selectOne("FreeLn.check_id", freeln_id);
 	}
 	
 	@Override
-	//ÀÌ¸ÞÀÏ Áßº¹°Ë»ç
+	//ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
 	public int check_email(String freeln_email) throws Exception{
 		return sqlSession.selectOne("FreeLn.check_email", freeln_email);
 	}
 	
 	@Override
-	//È¸¿ø°¡ÀÔ
+	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int freeLn(FreeLnVo freeLn) throws Exception{
 		return sqlSession.insert("FreeLn.freeln", freeLn);
 	}
