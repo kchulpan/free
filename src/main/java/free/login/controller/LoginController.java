@@ -12,6 +12,26 @@ import free.login.service.LoginFreeLnLostPwdService;
 @Controller
 public class LoginController {
 	
+	@RequestMapping("/")
+	public String logIn()
+	{
+		return "./LOGIN/login";
+	}
+	@RequestMapping("/SubPage")
+	public String subPage()
+	{
+		return "ADMIN/00_COMMON/sub_page";
+	}
+	@RequestMapping("/Register")
+	public String register()
+	{
+		return "./LOGIN/register";
+	}
+	@RequestMapping("/Forgot-password")
+	public String forgotpassword()
+	{
+		return "./LOGIN/forgot-password";
+	}
 
 	
 	@Autowired
@@ -21,7 +41,7 @@ public class LoginController {
 	@RequestMapping("/freeLnLostPwd")
 	public String freeLnLostPwd(@RequestParam HashMap<String, Object> map )
 	{
-		return "/";
+		return "null";
 		
 	}
 	
