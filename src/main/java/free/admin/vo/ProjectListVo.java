@@ -9,6 +9,7 @@ public class ProjectListVo
 	private String proj_str_date;
 	private String proj_end_date;
 	private String client_id;
+	private String client_nm;
 	private String need_tech;
 	private String field_1;
 	private String field_2;
@@ -25,6 +26,11 @@ public class ProjectListVo
 	public int getRownum() {
 		return rownum;
 	}
+
+	public void setClient_nm(String client_nm) {
+		this.client_nm = client_nm;
+	}
+
 	public void setRownum(int rownum) {
 		this.rownum = rownum;
 	}
@@ -60,6 +66,9 @@ public class ProjectListVo
 	}
 	public String getClient_id() {
 		return client_id;
+	}
+	public String getClient_nm() {
+		return client_nm;
 	}
 	public void setClient_id(String client_id) {
 		this.client_id = client_id;
@@ -106,13 +115,21 @@ public class ProjectListVo
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
+
 	@Override
 	public String toString() {
 		return "ProjectListVo [rownum=" + rownum + ", proj_id=" + proj_id + ", charge_id=" + charge_id + ", proj_nm="
 				+ proj_nm + ", proj_str_date=" + proj_str_date + ", proj_end_date=" + proj_end_date + ", client_id="
-				+ client_id + ", client_nm="  + ", need_tech=" + need_tech + ", field_1=" + field_1
+				+ client_id + ", client_nm=" + client_nm + ", need_tech=" + need_tech + ", field_1=" + field_1
 				+ ", field_2=" + field_2 + ", note=" + note + ", involve_num=" + involve_num + ", charge_nm="
-				+ charge_nm + ", remark=" + remark + "]";
+				+ charge_nm + ", remark=" + remark + ", getRownum()=" + getRownum() + ", getProj_id()=" + getProj_id()
+				+ ", getCharge_id()=" + getCharge_id() + ", getProj_nm()=" + getProj_nm() + ", getProj_str_date()="
+				+ getProj_str_date() + ", getProj_end_date()=" + getProj_end_date() + ", getClient_id()="
+				+ getClient_id() + ", getClient_nm()=" + getClient_nm() + ", getNeed_tech()=" + getNeed_tech()
+				+ ", getField_1()=" + getField_1() + ", getField_2()=" + getField_2() + ", getNote()=" + getNote()
+				+ ", getInvolve_num()=" + getInvolve_num() + ", getCharge_nm()=" + getCharge_nm() + ", getRemark()="
+				+ getRemark() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
 
 	public ProjectListVo(int rownum, String proj_id, String charge_id, String proj_nm, String proj_str_date,
@@ -126,6 +143,7 @@ public class ProjectListVo
 		this.proj_str_date = proj_str_date;
 		this.proj_end_date = proj_end_date;
 		this.client_id = client_id;
+		this.client_nm = client_nm;
 		this.need_tech = need_tech;
 		this.field_1 = field_1;
 		this.field_2 = field_2;
