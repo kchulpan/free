@@ -193,16 +193,15 @@ a {
 			var project_nm = $(this).find(".proj_nm").html();
 			var project_str_date = $(this).find(".proj_str_date").html();
 			var project_end_date = $(this).find(".proj_end_date").html();
-			var client_id = $(this).find(".client_id").html();
+			var client_id = $(this).find(".client_id").val();
 			var involve_num = $(this).find(".involve_num").html();
 			var field_1 = $(this).find(".field_1").html();
 			var field_2 = $(this).find(".field_2").val();
 			var remark = $(this).find(".remark").children("p").html();
 			var need_tech = $(this).find(".need_tech").html();
-			 var client_nm = $(this).find(".client_nm").html(); 
+	 		 var client_nm = $(this).find(".client_nm").html();  
 
 			console.log(proj_id);
-			console.log(charge_id);
 			console.log(proj_nm);
 			console.log(proj_str_date);
 			console.log(proj_end_date);
@@ -212,25 +211,32 @@ a {
 			console.log(field_2);
 			console.log(remark);
 			console.log(need_tech);
-			console.log(client_nm);
+	 		console.log(client_nm);
+			/* 
+			var option = $("option[value="+charge_id+"]",".modal-body #char_id");
+			console.log("option!!!"+option.html());
+			var option = $("option[value="+client_id+"]",".modal-body #cli_id");
+			console.log("option!!!"+option.html()); */
 			
 			/* console.log(use_yn); */
 			/* var modalData = document.querySelectorAll('tbody a'); */
 			//var my_id_value = $(".idClick").eq(0).data("title");
 			//var my_id_value2 = $(".idClick").eq(1).data("title1");
 			$(".modal-body #proj_id").val(project_id);
-			$(".modal-body #char_id").val(charge_id);
-			$(".modal-body #proj_nm").val(project_nm);
+			/* $(".modal-body #char_id").val(charge_id); */
+			$("option[value="+charge_id+"]",".modal-body #char_id").prop("selected", true);
 			$(".modal-body #proj_str_date").val(project_str_date);
 			$(".modal-body #proj_end_date").val(project_end_date);
-			$(".modal-body #cli_id").val(client_id);
+			/* $(".modal-body #cli_id").val(client_id); */
+			
+			$("option[value="+client_id+"]",".modal-body #cli_id").prop("selected", true);
 			$(".modal-body #inv_num").val(involve_num);
 			$(".modal-body #fid_1").val(field_1);
 			$(".modal-body #fid_2").val(field_2);
 			$(".modal-body #rmark").val(remark);
 			$(".modal-body #need_tec").val(need_tech);
-		/* 	$(".modal-body #cli_nm").val(client_nm);
- */
+	/* 	 	$(".modal-body #cli_nm").val(client_nm); */ 
+
 		})
 	});
 </script>
@@ -332,9 +338,16 @@ a {
 						              	  </div>
 							           </div>
 							            <div class="form-group">
+							             <input type="hidden" id="client_id" name="client_id" value="">
 							              <label for="client_id">고객사</label>
-							              <input type="text" name="client_id" class="form-control" id="client_id" placeholder="고객사를 입력하세요" required>
-							            </div>
+				                	       <select name="client_id" class="form-control" id="client_id" required>
+										    <option value="선택하세요">선택하세요</option>
+										    <c:forEach var="clientList" items="${clientList}">
+									    	<option value="${clientList.client_id}">${clientList.client_nm} </option>
+									        </c:forEach>												
+				                	      </select>
+
+				                	    </div>
 							            <div class="form-group">
 							              <label for="involve_num">투여인원</label>
 							              <input type="text" name="involve_num" class="form-control" id="involve_num" placeholder="투여인원을 입력하세요" required>
@@ -369,11 +382,12 @@ a {
 															    <input type="text" class="form-control" id="charge_id" name="charge_id"/>
 															    </div> -->
 					 										   <div class="form-group">
-															    <input type="hidden" id="charge_id" name="charge_id" value="">
+															    <!-- <input type="hidden" id="charge_id" name="charge_id" value=""> -->
 																<label for="charge_nm">담당자</label>
 															    <select name="charge_id" class="form-control" id="charge_id" required>
-															    	<c:forEach var="projectList" items="${projectList}">
-															    	<option value="${projectList.charge_id}">${projectList.charge_nm} </option>
+															    	<option value="선택하세요">선택하세요</option>
+															    	<c:forEach var="chargeList" items="${chargeList}">
+															    	<option value="${chargeList.charge_id}">${chargeList.charge_nm} </option>
 															    	</c:forEach>												
 															    </select>
 															    </div> 
@@ -424,7 +438,11 @@ a {
 							            </div>
 							            <div class="form-group">
 							              <label for="cli_id">고객사</label>
-							              <input type="text" class="form-control" id="cli_id" name="client_id" placeholder="고객사를 입력하세요">
+							           	  <select name="client_id" class="form-control" id="cli_id" >
+										    <c:forEach var="clientList" items="${clientList}">
+									    	<option value="${clientList.client_id}">${clientList.client_nm} </option>
+									        </c:forEach>												
+				                	      </select>
 							            </div>
 							            <div class="form-group">
 							              <label for="inv_num">투여인원</label>
@@ -462,10 +480,10 @@ a {
 
 										   
 										   <!--담당자 이름-->
-											<label for="charge_id">담당자</label>
-										    <select class="form-control" id="charge_id" name="charge_id">
-										    	<c:forEach var="projectList" items="${projectList}">
-										    	<option value="${projectList.charge_id}">${projectList.charge_nm} </option>
+											<label for="char_id">담당자</label>
+										    <select class="form-control" id="char_id" name="charge_id">
+										    	<c:forEach var="chargeList" items="${chargeList}">
+										    	<option value="${chargeList.charge_id}">${chargeList.charge_nm} </option>
 										    	</c:forEach> 
 										    </select>
 										    </div>
@@ -570,17 +588,19 @@ a {
 														</c:choose>  --%>
 														<tr class="rowClick" role="row" style="text-align: center">
 																<input type="hidden" data-toggle="modal" class="idClick proj_id" data-target="#inputModal2" data-id="proj_id" value="${proj.proj_id}"> 
+																<input type="hidden" data-toggle="modal" class="idClick charge_id" data-target="#inputModal2" data-id="charge_id" value="${proj.charge_id}"> 
+																<input type="hidden" data-toggle="modal" class="idClick client_id" data-target="#inputModal2" data-id="client_id" value="${proj.client_id}"> 
 																<input type="hidden" data-toggle="modal" class="idClick field_2" data-target="#inputModal2" data-id="field_2" value="${proj.field_2}"> 
 															<td><a href="#" data-toggle="modal" class="idClick rownum" data-target="#inputModal2"data-id="rownum">${proj.rownum}</a></td>
 															<td><a href="#" data-toggle="modal" class="idClick proj_nm" data-target="#inputModal2"data-id="proj_nm">${proj.proj_nm}</a></td>
 															<td><a href="#" data-toggle="modal" class="idClick proj_str_date" data-target="#inputModal2" data-id="proj_str_date">${proj.proj_str_date}</a>
 																~
 																<a href="#" data-toggle="modal" class="idClick proj_end_date" data-target="#inputModal2" data-id="proj_end_date">${proj.proj_end_date}</a></td>
-															<td><a href="#" data-toggle="modal" class="idClick client_id" data-target="#inputModal2" data-id="client_id">${proj.client_nm}</a></td>
+															<td><a href="#" data-toggle="modal" class="idClick client_id" data-target="#inputModal2" >${proj.client_nm}</a></td>
 															<td><a href="#" data-toggle="modal" class="idClick need_tech" data-target="#inputModal2" data-id="need_tech">${proj.need_tech}</a></td>
 															<td><a href="#" data-toggle="modal" class="idClick field_1" data-target="#inputModal2" data-id="field_1">${proj.field_1}</a></td>
 															<td><a href="#" data-toggle="modal" class="idClick involve_num" data-target="#inputModal2" data-id="involve_num">${proj.involve_num}</a></td>
-															<td><a href="#" data-toggle="modal" class="idClick charge_id" data-target="#inputModal2" data-id="charge_id">${proj.charge_nm}</a></td>
+															<td><a href="#" data-toggle="modal" class="idClick charge_id" data-target="#inputModal2" >${proj.charge_nm}</a></td>
 															<td><a href="#" data-toggle="modal" class="idClick remark" data-target="#inputModal3" data-id="remark">상세내용<p hidden>${proj.remark}</p></a></td>
 															<%--   <td><a href="#" data-toggle="modal" class="idClick field_2" data-target="#inputModal2" data-id="field_2" >${proj.field_2}</a></td> --%>
 															<%-- 	<td> <a href="#" data-toggle="modal" class="idClick charge_nm" data-target="#inputModal2" data-id="charge_nm" >${proj.charge_nm}</a></td> --%>
