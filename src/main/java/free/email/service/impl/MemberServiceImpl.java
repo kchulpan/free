@@ -1,6 +1,7 @@
 package free.email.service.impl;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -26,15 +27,16 @@ public class MemberServiceImpl implements MemberService
 	{
 		String freeln_phone=(String) map.get("freeln_phone");
 		String freeln_mail= (String) map.get("freeln_mail");
-		EmailVo freeln_list = memberDao.sendEmailAction(map);
-		String freeln_pwd = freeln_list.getFreeln_pwd();
-		System.out.println("받은비밀번호:"+freeln_pwd);
+		List<EmailVo> freeln_list = memberDao.sendEmailAction(map);
 		String sendMail = null;
-		if(freeln_pwd!=null)
+		if(freeln_list.size()!=0)
 		{
 			//구글일 경우
 			// String host="smtp.naver.com";
 			//네이버일 경우
+			EmailVo emailVo = freeln_list.get(0);
+			String freeln_pwd = emailVo.getFreeln_pwd();
+			
 			String host="smtp.naver.com";
 			
 			final String sender_id = "kchulpan";

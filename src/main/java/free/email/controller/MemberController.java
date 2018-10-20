@@ -17,6 +17,8 @@ public class MemberController
 	@Autowired
 	private MemberService memberService;
 	
+	
+	// 비밀번호 분실시 이메일로 전송
     @RequestMapping("/EmailSend")
     
     public ModelAndView sendEmailAction (@RequestParam HashMap<String, Object> map) throws Exception 
@@ -30,11 +32,8 @@ public class MemberController
 	       }else {
 	    	   mav.setViewName("./LOGIN/sendMail_False");
 	       }
-	       System.out.println(mav.getViewName());
 		return mav;
 	        
 	}
-
- 
 }
  
