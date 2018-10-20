@@ -619,14 +619,14 @@ $(function(){
 	</div>
 </div>
 <!---------------------- 경력정보 입력 끝------------------------->
-<<<<<<< HEAD
+
           		<input class="btn btn-primary btn-block" type="submit" value="회원가입">
 				
-=======
+
           
 				<!-- <a class="btn btn-primary btn-block" href="login.html">Register</a> -->
 				<button class="btn btn-primary btn-block" >Register</button>
->>>>>>> e5d48ac8b6d86a3e7b5d0f8df42baef050db54a7
+
 			</form>
 			<div class="text-center">
 				<a class="d-block small mt-3" href="/">Login Page</a>
