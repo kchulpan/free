@@ -1,33 +1,24 @@
 package free.resist.serviceImpl;
-/*package free.client.serviceImol;
 
-import java.io.PrintWriter;
-
-import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import free.client.dao.FreeLnDao;
-import free.client.service.FreeLnService;
+import free.resist.dao.ResistDao;
+import free.resist.service.ResistService;
+@Service("resistService")
+public class ResistServiceImpl implements ResistService {
 
-@Service("freeLnService")
-public class FreeLnServiceImpl implements FreeLnService {
-	
 	@Autowired
-	private FreeLnDao freeLnDao;
+	ResistDao resistDao;
 	
 	
-	//���̵� �ߺ��˻�
 	@Override
-	public void check_id(String freeLn_id, HttpServletResponse response) throws Exception {
-		PrintWriter out = response.getWriter();
-		out.println(freeLnDao.check_id(freeLn_id));
+	public void NewFreeLnRegist(HashMap<String, Object> map) 
+	{
+		resistDao.NewFreeLnRegist(map);
+		
 	}
-	
-	//�̸��� �ߺ��˻�
 
-	
-	
 }
-*/

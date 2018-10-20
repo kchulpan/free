@@ -57,9 +57,6 @@
         <constructor-arg name="sqlSessionFactory" 
              ref="sqlSessionFactory"></constructor-arg>    
     </bean>
-
-
-
     
 <!-- MultipartResolver 설정, upload 용량 제한(단위:byte)
     <bean id="multipartResolver"

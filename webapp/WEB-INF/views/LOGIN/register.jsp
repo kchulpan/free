@@ -129,6 +129,7 @@ $(function(){
 			<div class="card-header">Register an Account</div>
 			<div class="card-body">
 				<form method="POST" action="/SubPage">
+				<form action="/NewFreeLnRegist" method="POST">
 				
 				<!-- 사진입력 -->
 				
@@ -162,8 +163,8 @@ $(function(){
 						</div>
 						<div class="col-md-6">
 							<div class="form-label-group">
-								<input type="text" id="freeln_phone" name="freeln_phone" class="form-control" placeholder="Cell Phone ex)010-1111-2222" required="required">
-								<label for="freeln_phone">Cell Phone ex)010-1111-2222</label>
+								<input type="text" id="freeln_phone" name="freeln_phone" class="form-control" placeholder='"-"없이 입력하세요' required="required">
+								<label for="freeln_phone">핸드폰번호 : "-"없이 입력하세요</label>
 							</div>
 						</div>
 					</div>
@@ -173,7 +174,7 @@ $(function(){
 				<!-- 이메일 입력 -->
 				<div class="form-group">
 					<div class="form-label-group">
-						<input type="email" id="freeln_mail" name="freeln_mail" class="form-control" placeholder="Email address" required="required">
+						<input type="email" id="freeln_mail" name="freen_mail" class="form-control" placeholder="Email address" required="required">
 						<label for="freeln_mail">Email address</label>
 					</div>
 				</div>
@@ -489,8 +490,8 @@ $(function(){
 	<div class="form-label-group">기타 기술정보</div>
 		<div class="col-md-12">
 			<div class="form-label-group" >       	
-				<input type="text" id="use_tech1" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
-				<label for="use_tech1">항목에 없는 기술정보를 입력하세요</label>
+				<input type="text" id="add_tech" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
+				<label for="add_tech">항목에 없는 기술정보를 입력하세요</label>
 			</div>
 		</div>	
 	<!---------   기타언어 입력 끝----------->
@@ -510,19 +511,50 @@ $(function(){
 	<div class="form-row">
 		<div class="col-md-6">
 			<div class="form-label-group">
-				<input type="text" id="clinent_nm" name="client_nm" class="form-control" placeholder="Client Name" required="required" autofocus="autofocus">
-				<label for="clinent_nm">Client Name</label>
+				<input type="text" id="client_nm" name="client_nm" class="form-control" placeholder="Client Name" required="required" autofocus="autofocus">
+				<label for="client_nm">Client Name</label>
 			</div>
 		</div>
-		<div class="col-md-6">
+		 <div class="col-md-6">
 			<div class="form-label-group">
-				<select>
-					<option>
-				</select>
-				<input type="text" id="client_loca1" name="client_loca1" class="form-control" placeholder="Client Location" required="required">
-				<label for="client_loca1">Client Location1</label>
+			   <!-- <label for="client_local_1">
+			       <select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			          <option>지역1</option>
+			          <option>지역2</option>      
+			       </select>
+			   </label>		 -->   		
+				<!-- <input type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required"> 
+				<label for="client_local_1">Client Location1</label> -->
+			
+			 <span>
+							<label for="client_local_1">
+								<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+									<option value="">지역선택1</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>	
+								</select>
+							</label>
+						</span>
+						
+						<span>  
+							<label for="client_local_1">
+								<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+									<option value="">지역선택2</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>	
+								</select>
+							</label>
+						</span>
+			
+			
+			
+			
+			
+			
+			
 			</div>
 		</div>
+
 		<br><br><br> 
 		
 		<div class="col-md-6">
@@ -587,8 +619,14 @@ $(function(){
 	</div>
 </div>
 <!---------------------- 경력정보 입력 끝------------------------->
+<<<<<<< HEAD
           		<input class="btn btn-primary btn-block" type="submit" value="회원가입">
 				
+=======
+          
+				<!-- <a class="btn btn-primary btn-block" href="login.html">Register</a> -->
+				<button class="btn btn-primary btn-block" >Register</button>
+>>>>>>> e5d48ac8b6d86a3e7b5d0f8df42baef050db54a7
 			</form>
 			<div class="text-center">
 				<a class="d-block small mt-3" href="/">Login Page</a>

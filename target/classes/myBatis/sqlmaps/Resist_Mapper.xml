@@ -6,16 +6,17 @@
     
     <mapper namespace="Client_Reg">
     
-<!--     	<resultMap id="ClientReg" type="free.resist.vo.ResistVo">
+     	<resultMap id="ClientReg" type="free.resist.vo.ResistVo">
         
-          <result property="freeln_nm"         column="FREELN_NM"        javaType="string"/>
-         <result property="img_nm"         column="IMG_NM"        javaType="string"/>
-         <result property="freen_mail"     column="FREEN_MAIL"   javaType="string"/>
-         <result property="freeln_phone"   column="FREELN_PHONE"  javaType="string"/>
+         
+         <result property="img_nm"         column="IMG_NM"         javaType="string"/>
+         <result property="freeln_nm"      column="FREELN_NM"      javaType="string"/>
+         <result property="freen_mail"     column="FREEN_MAIL"     javaType="string"/>
+         <result property="freeln_phone"   column="FREELN_PHONE"   javaType="string"/>
         
-         <result property="hope_place"     column="HOPE_PLACE"   javaType="string"/>
-         <result property="hope_money"     column="HOPE_MONEY"   javaType="string"/>
-         <result property="major_tech"     column="MAJOR_TECH"   javaType="string"/>
+         <result property="hope_place"     column="HOPE_PLACE"     javaType="string"/>
+         <result property="hope_money"     column="HOPE_MONEY"     javaType="string"/>
+         <result property="major_tech"     column="MAJOR_TECH"     javaType="string"/>
          
          
          <result property="client_nm"       column="CLIENT_NM"        javaType="string"/>
@@ -23,38 +24,44 @@
          <result property="client_local_2"  column="CLIENT_LOCAL_2"   javaType="string"/>
          <result property="task"            column="TASK"             javaType="string"/>
          <result property="duty"            column="DUTY"             javaType="string"/>
-         <result property="work_str_date"   column="WORK_STR_DATA"   javaType="string"/>
-         <result property="work_end_date"   column="WORK_END_DATA"   javaType="string"/>
-         <result property="contents"        column="CONTENTS"        javaType="string"/>
-         <result property="use_tech_1"      column="USE_TECH_1"      javaType="string"/>
-         <result property="use_tech_2"      column="USE_TECH_2"      javaType="string"/>
-         <result property="work_money"      column="WORK_MONEY"      javaType="string"/>
+         <result property="work_str_date"   column="WORK_STR_DATA"    javaType="string"/>
+         <result property="work_end_date"   column="WORK_END_DATA"    javaType="string"/>
+         <result property="contents"        column="CONTENTS"         javaType="string"/>
+         <result property="use_tech_1"      column="USE_TECH_1"       javaType="string"/>
+         <result property="use_tech_2"      column="USE_TECH_2"       javaType="string"/>
+         <result property="work_money"      column="WORK_MONEY"       javaType="string"/>
          
-		 </resultMap> -->
+         <result property="freeln_pwd"      column="FREELN_PWD"       javaType="string"/>
+         <result property="freeln_id"       column="FREELN_ID"        javaType="string"/>
+         
+		 </resultMap>
 		 
-<!--    <insert id="ClientReginsert" statementType="CALLABLE" parameterType="free.resist.vo.ResistVo">
+    <insert id="ClientReginsert" statementType="CALLABLE" parameterType="free.resist.vo.ResistVo">
 		
 		{CALL PKG_RESIST.PROC_RESIST_INSERT(
 		
-		#{freeln_nm,      mode=IN,       jdbcType=VARCHAR},
-		#{freen_mail,      mode=IN,       jdbcType=VARCHAR},
+		#{img_nm,          mode=IN,       jdbcType=VARCHAR},
+		#{freeln_nm,       mode=IN,       jdbcType=VARCHAR},
 		#{freeln_phone,    mode=IN,       jdbcType=VARCHAR},
+		#{freen_mail,      mode=IN,       jdbcType=VARCHAR},
 		
-		#{hope_place,      mode=IN,       jdbcType=VARCHAR},
-		#{hope_money,      mode=IN,       jdbcType=VARCHAR},
-		#{client_nm,       mode=IN,       jdbcType=VARCHAR},
-		#{client_local_1,    mode=IN,     jdbcType=VARCHAR},
-		#{client_local_2,    mode=IN,     jdbcType=VARCHAR},
-		#{task,            mode=IN,       jdbcType=VARCHAR},
-		#{duty,            mode=IN,       jdbcType=VARCHAR},
+		#{hope_place,        mode=IN,       jdbcType=VARCHAR},
+		#{hope_money,        mode=IN,       jdbcType=VARCHAR},
+		#{major_tech,        mode=IN,       jdbcType=VARCHAR},
+		#{client_nm,         mode=IN,       jdbcType=VARCHAR},
+		
+		#{task,              mode=IN,       jdbcType=VARCHAR},
+		#{duty,              mode=IN,       jdbcType=VARCHAR},
 		#{work_str_date,    mode=IN,      jdbcType=VARCHAR},
 		#{work_end_date,    mode=IN,      jdbcType=VARCHAR},
 		#{contents,      mode=IN,         jdbcType=VARCHAR},
 		#{use_tech_1,    mode=IN,         jdbcType=VARCHAR},
 		#{use_tech_2,    mode=IN,         jdbcType=VARCHAR},
-		#{work_money,    mode=IN,         jdbcType=VARCHAR}
-		)}
+		#{work_money,    mode=IN,         jdbcType=VARCHAR},
+		#{freeln_pwd,    mode=IN,         jdbcType=VARCHAR}
+		
+		 )}
   	  
-  	  </insert>  -->
+  	  </insert> 
   </mapper>
  

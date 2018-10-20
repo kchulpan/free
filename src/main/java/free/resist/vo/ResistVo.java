@@ -1,10 +1,10 @@
 package free.resist.vo;
-/*package free.client.vo;
+
 
 
 public class ResistVo {
 	
-	private String freeln_id;
+	
 	private String img_nm;
 	private String freeln_nm;
 	private String freeln_mail;
@@ -25,15 +25,9 @@ public class ResistVo {
 	 private String use_tech_1;
 	 private String use_tech_2;
 	 private String work_money;
-	
 	 
-	 
-	 public String getFreeln_id() {
-		return freeln_id;
-	}
-	public void setFreeln_id(String freeln_id) {
-		this.freeln_id = freeln_id;
-	}
+	 private String freeln_pwd;
+	 private String freeln_id;
 	public String getImg_nm() {
 		return img_nm;
 	}
@@ -142,20 +136,34 @@ public class ResistVo {
 	public void setWork_money(String work_money) {
 		this.work_money = work_money;
 	}
+	public String getFreeln_pwd() {
+		return freeln_pwd;
+	}
+	public void setFreeln_pwd(String freeln_pwd) {
+		this.freeln_pwd = freeln_pwd;
+	}
+	public String getFreeln_id() {
+		return freeln_id;
+	}
+	public void setFreeln_id(String freeln_id) {
+		this.freeln_id = freeln_id;
+	}
 	@Override
 	public String toString() {
-		return "ResistVo [freeln_id=" + freeln_id + ", img_nm=" + img_nm + ", freeln_nm=" + freeln_nm + ", freeln_mail="
-				+ freeln_mail + ", freeln_phone=" + freeln_phone + ", hope_place=" + hope_place + ", hope_money="
-				+ hope_money + ", major_tech=" + major_tech + ", client_nm=" + client_nm + ", client_local_1="
-				+ client_local_1 + ", client_local_2=" + client_local_2 + ", task=" + task + ", duty=" + duty
-				+ ", work_str_date=" + work_str_date + ", work_end_date=" + work_end_date + ", contents=" + contents
-				+ ", use_tech_1=" + use_tech_1 + ", use_tech_2=" + use_tech_2 + ", work_money=" + work_money + "]";
+		return "ResistVo [img_nm=" + img_nm + ", freeln_nm=" + freeln_nm + ", freeln_mail=" + freeln_mail
+				+ ", freeln_phone=" + freeln_phone + ", hope_place=" + hope_place + ", hope_money=" + hope_money
+				+ ", major_tech=" + major_tech + ", client_nm=" + client_nm + ", client_local_1=" + client_local_1
+				+ ", client_local_2=" + client_local_2 + ", task=" + task + ", duty=" + duty + ", work_str_date="
+				+ work_str_date + ", work_end_date=" + work_end_date + ", contents=" + contents + ", use_tech_1="
+				+ use_tech_1 + ", use_tech_2=" + use_tech_2 + ", work_money=" + work_money + ", freeln_pwd="
+				+ freeln_pwd + ", freeln_id=" + freeln_id + "]";
 	}
+	
 	 
+	
 	 
 
 	 
 	 
 
 }
-*/
