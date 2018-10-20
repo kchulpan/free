@@ -32,6 +32,19 @@
    
 
   <body class="bg-dark">
+  <%
+  	String freeln_phone = null;
+    		if(session.getAttribute("freeln_phone") != null) {
+    			freeln_phone = (String)session.getAttribute("freeln_phone");
+    			if(freeln_phone != null) {
+    				session.setAttribute("messageType", "오류메시지");
+    				session.setAttribute("messageContent", "로그인이 되어 있는 상태입니다.");
+    				response.sendRedirect("sub_page.jsp");
+    			}
+    		}
+  
+  %>
+   
 
     <div class="container">
       <div class="card card-login mx-auto mt-5">
@@ -39,7 +52,7 @@
            <div><img src=""></div> 
         </div>
         <div class="card-body">
-          <form>
+          <form method="POST" action="/LoginCheck">
             <div class="form-group">
               <div>
               	<input type="radio" name="login" id="freelnLog">
@@ -48,7 +61,7 @@
               	<label for="chgLog">담당자</label>
               </div>
               <div class="form-label-group">
-                <input type="text" id="inputId" class="form-control" placeholder="id" required="required" autofocus="autofocus">
+                <input type="text" id="freeln_phone" class="form-control" name="freeln_pwd" placeholder="id" required="required" autofocus="autofocus">
                 <label for="inputId">아이디를 입력하세요</label>
               </div>
             </div>
@@ -66,9 +79,81 @@
                 </label>
               </div>
             </div>
-            <a class="btn btn-primary btn-block" href="/Freelancer">로그인</a>
-            <a class="btn btn-primary btn-block" href="/SubPage">임시버튼관리자페이지</a>
+            
+            	<input class="btn btn-primary btn-block" type="submit" value="로그인">
+            	<input class="btn btn-primary btn-block" type="submit" value="관리자페이지">
+            	
+            
           </form>
+         <%
+			String messageContent = null;
+			if(session.getAttribute("messageContent") != null) {
+				messageContent = (String) session.getAttribute("messageContent");
+			}	
+			String messageType = null;
+			if(session.getAttribute("messageType") != null) {
+				messageType = (String) session.getAttribute("messageType");
+			}	
+			if (messageContent != null){
+				
+			
+		 %>
+		 <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div class="modal-content" <%if(messageType.equals("오류메시지")) out.println("panel-warning"); else out.println("panel-success"); %>">
+					<div class="modal-header panel-heading">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times</span>
+							<span class="sr-only">close</span>
+							
+						</button>
+						<h4 class="modal-title">
+							<%= messageType %>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<%= messageContent%>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('#messageModal').modal("show");
+	</script>
+	<%
+	session.removeAttribute("messageContent");
+	session.removeAttribute("messageType");
+	}
+	%>	
+	<div class="modal fade" id="checkModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div class="modal-content panel-info" id="checkType">
+					<div class="modal-header panel-heading">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times</span>
+							<span class="sr-only">close</span>
+							
+						</button>
+						<h4 class="modal-title">
+							확인메시지
+						</h4>
+					</div>
+					<div class="modal-body" id="checkMessage">
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
           <div class="text-center">
             <a class="d-block small mt-3" href="/Register">회원가입</a>
             <a class="d-block small" href="/Forgot-password">비밀번호를 잊어버리셨나요?</a>
@@ -76,6 +161,7 @@
         </div>
       </div>
     </div>
+   		
 
    
 
