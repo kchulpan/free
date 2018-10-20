@@ -199,7 +199,7 @@ a {
 			var field_2 = $(this).find(".field_2").val();
 			var remark = $(this).find(".remark").children("p").html();
 			var need_tech = $(this).find(".need_tech").html();
-	 		 var client_nm = $(this).find(".client_nm").html();  
+	 	    var client_nm = $(this).find(".client_nm").html();   
 
 			console.log(proj_id);
 			console.log(proj_nm);
@@ -211,7 +211,7 @@ a {
 			console.log(field_2);
 			console.log(remark);
 			console.log(need_tech);
-	 		console.log(client_nm);
+	 		console.log(client_nm); 
 			/* 
 			var option = $("option[value="+charge_id+"]",".modal-body #char_id");
 			console.log("option!!!"+option.html());
@@ -223,6 +223,7 @@ a {
 			//var my_id_value = $(".idClick").eq(0).data("title");
 			//var my_id_value2 = $(".idClick").eq(1).data("title1");
 			$(".modal-body #proj_id").val(project_id);
+			$(".modal-body #proj_nm").val(project_nm);
 			/* $(".modal-body #char_id").val(charge_id); */
 			$("option[value="+charge_id+"]",".modal-body #char_id").prop("selected", true);
 			$(".modal-body #proj_str_date").val(project_str_date);
@@ -235,7 +236,7 @@ a {
 			$(".modal-body #fid_2").val(field_2);
 			$(".modal-body #rmark").val(remark);
 			$(".modal-body #need_tec").val(need_tech);
-	/* 	 	$(".modal-body #cli_nm").val(client_nm); */ 
+	 	 	 $(".modal-body #cli_nm").val(client_nm);  
 
 		})
 	});
@@ -338,9 +339,9 @@ a {
 						              	  </div>
 							           </div>
 							            <div class="form-group">
-							             <input type="hidden" id="client_id" name="client_id" value="">
+							             <!-- <input type="hidden" id="client_id" name="client_id" value=""> -->
 							              <label for="client_id">고객사</label>
-				                	       <select name="client_id" class="form-control" id="client_id" required>
+				                	       <select name="client_id" class="form-control" id="client_id" >
 										    <option value="선택하세요">선택하세요</option>
 										    <c:forEach var="clientList" items="${clientList}">
 									    	<option value="${clientList.client_id}">${clientList.client_nm} </option>
