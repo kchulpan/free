@@ -63,525 +63,503 @@ $(function(){
 
 </script>
 
-
- <script>
-
- (function($) { $(document).ready(function(){
-
-	 $('#work_str_date').datepicker();
-	 $( "#work_str_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
-	    $('#work_end_date').datepicker();
-	    $( "#work_end_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
-
-  } );
- })(jQuery);
-
+<!-- 데이트 피커 시작 -->
+<script>
  
-
-
-	
-  </script>
-
-
-
-
-
-
+	(function($) { $(document).ready(function(){
+		$('#work_str_date').datepicker();
+		$('#work_str_date' ).datepicker( "option", "dateFormat", "yy-mm-dd");
+		$('#work_end_date').datepicker();
+		$('#work_end_date' ).datepicker( "option", "dateFormat", "yy-mm-dd");
+  		});
+	})(jQuery);
+</script>
+<!-- 데이트 피커 끝 -->
 
 </head>
    
 
-  <body class="bg-dark">
-
-    <div class="container">
-      <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Register an Account</div>
-        <div class="card-body">
-          <form>
-          <!-- 사진입력 -->
-<!--             <div class="form-group">
-              <div class="form-row">
-                <div class="col-md-6">
-                  <div class="form-label-group"> -->
-                   <article>
-					  <div>
-					  	<img id="img" alt="사진을 올려주세요"  src="#" width="225" height="300">
-					  </div>
-					  <div>
-					  	<input type="file" id="upload" name="img_nm">
-					  </div>
-					  <br><br>
-					</article>
-<!--                   </div>
-                </div>
-              </div>                  
-            </div> -->
-       <!-- 사진입력 끝 -->
+<body class="bg-dark">
+	<div class="container">
+		<div class="card card-register mx-auto mt-5">
+			<div class="card-header">Register an Account</div>
+			<div class="card-body">
+				<form>
+				
+				<!-- 사진입력 -->
+				
+<!--<div class="form-group">
+    <div class="form-row">
+    <div class="col-md-6">
+    <div class="form-label-group"> -->
+				<article>
+					<div>
+						<img id="img" alt="사진을 올려주세요"  src="#" width="225" height="300">
+					</div>
+					<div>
+						<input type="file" id="upload" name="img_nm">
+					</div>
+				</article>
+					<br><br>
+<!--</div>
+    </div>
+    </div>                  
+    </div> -->
+				<!-- 사진입력 끝 -->
        
-       <!-- 이름, 전화번호 입력 -->
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="freeln_nm" name="freeln_nm" class="form-control" placeholder="Full name" required="required" autofocus="autofocus">
-                    <label for="freeln_nm">Full name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="freeln_phone" name="freeln_phone" class="form-control" placeholder="Cell Phone ex)010-1111-2222" required="required">
-                    <label for="freeln_phone">Cell Phone ex)010-1111-2222</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 이름, 전화번호 입력 끝 -->
+				<!-- 이름, 전화번호 입력 -->
+				<div class="form-group">
+					<div class="form-row">
+						<div class="col-md-6">
+							<div class="form-label-group">
+								<input type="text" id="freeln_nm" name="freeln_nm" class="form-control" placeholder="Full name" required="required" autofocus="autofocus">
+								<label for="freeln_nm">Full name</label>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-label-group">
+								<input type="text" id="freeln_phone" name="freeln_phone" class="form-control" placeholder="Cell Phone ex)010-1111-2222" required="required">
+								<label for="freeln_phone">Cell Phone ex)010-1111-2222</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 이름, 전화번호 입력 끝 -->
             
-            <!-- 이메일 입력 -->
-            <div class="form-group">
-              <div class="form-label-group">
-                <input type="email" id="freeln_mail" name="freeln_mail" class="form-control" placeholder="Email address" required="required">
-                <label for="freeln_mail">Email address</label>
-              </div>
-            </div>
-            <!-- 이메일 입력 끝-->
+				<!-- 이메일 입력 -->
+				<div class="form-group">
+					<div class="form-label-group">
+						<input type="email" id="freeln_mail" name="freeln_mail" class="form-control" placeholder="Email address" required="required">
+						<label for="freeln_mail">Email address</label>
+					</div>
+				</div>
+				<!-- 이메일 입력 끝-->
             
-            <!-- 비밀번호 입력 -->
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="password" id="freeln_pwd" name="freeln_pwd" class="form-control" placeholder="Password" required="required">
-                    <label for="freeln_pwd">Password</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="password" id="confirmPwd" class="form-control" placeholder="Confirm password" required="required">
-                    <label for="confirmPwd">Confirm password</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 비밀번호 입력 -->
+				<!-- 비밀번호 입력 -->
+				<div class="form-group">
+					<div class="form-row">
+						<div class="col-md-6">
+							<div class="form-label-group">
+								<input type="password" id="freeln_pwd" name="freeln_pwd" class="form-control" placeholder="Password" required="required">
+								<label for="freeln_pwd">Password</label>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-label-group">
+								<input type="password" id="confirmPwd" class="form-control" placeholder="Confirm password" required="required">
+								<label for="confirmPwd">Confirm password</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 비밀번호 입력 끝-->
             
-            <!-- 희망근무지역, 희망월급여 -->
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="hope_place" name="hope_place" class="form-control" placeholder="Hope working area" required="required">
-                    <label for="hope_place">Hope working area</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="hope_money" name="hope_money" class="form-control" placeholder="Desired wage" required="required">
-                    <label for="hope_money">Desired wage</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <br><br>
-            <!-- 희망근무지역, 희망월급여 끝-->
+				<!-- 희망근무지역, 희망월급여 -->
+				<div class="form-group">
+					<div class="form-row">
+						<div class="col-md-6">
+							<div class="form-label-group">
+								<input type="text" id="hope_place" name="hope_place" class="form-control" placeholder="Hope working area" required="required">
+								<label for="hope_place">Hope working area</label>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-label-group">
+								<input type="text" id="hope_money" name="hope_money" class="form-control" placeholder="Desired wage" required="required">
+								<label for="hope_money">Desired wage</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br><br>
+				<!-- 희망근무지역, 희망월급여 끝-->
             
 <!------------------------  select 기술정보 입력1 -------------------->
-            <div class="card-header">Technical information</div>
-            <br>
+<div class="card-header">Technical information</div>
+<br>
+<div class="form-group">
+<div class="form-row"> 	
+<div class="form-label-group">개발언어</div>
+<div class="col-md-12">
+<div class="form-label-group" >
+<div class="form-control"> 
+<div>	
+<span>
+<label>.NET
+<select name="major_tech">
+<option value="">선택</option>
+<option value="공통CODE">초급</option>
+<option value="공통CODE">중급</option>
+<option value="공통CODE">고급</option>
+</select>
+</label>
+</span>
+&nbsp;&nbsp;
+<span>
+<label>C
+<select name="major_tech">
+<option value="">선택</option>
+<option value="공통CODE">초급</option>
+<option value="공통CODE">중급</option>
+<option value="공통CODE">고급</option>
+</select>
+</label>
+</span>
+&nbsp;&nbsp;
+<span>
+<label>C#
+<select name="major_tech">
+<option value="">선택</option>
+<option value="공통CODE">초급</option>
+<option value="공통CODE">중급</option>
+<option value="공통CODE">고급</option>
+</select>
+</label>
+</span>
+&nbsp;&nbsp;
+<span>
+<label>C++
+<select name="major_tech">
+<option value="">선택</option>
+<option value="공통CODE">초급</option>
+<option value="공통CODE">중급</option>
+<option value="공통CODE">고급</option>
+</select>
+   	 </label>
+   	</span>
+   	&nbsp;&nbsp;
+   	<span>
+   	 <label>JAVA
+   	  <select name="major_tech">
+   	    	<option value="">선택</option>
+    	    <option value="공통CODE">초급</option>
+    	    <option value="공통CODE">중급</option>
+    	    <option value="공통CODE">고급</option>
+</select>
+</label>
+</span>
+&nbsp;&nbsp;
+<!-- <span>
+<label>JS
+<select name="major_tech">
+<option value="">선택</option>
+<option value="공통CODE">초급</option>
+<option value="공통CODE">중급</option>
+<option value="공통CODE">고급</option>
+</select>
+</label>
+</span> -->
+&nbsp;&nbsp;
+<!-- <span>
+<label>JSP
+<select name="major_tech">
+<option value="">선택</option>
+<option value="공통CODE">초급</option>
+<option value="공통CODE">중급</option>
+<option value="공통CODE">고급</option>
+</select>
+</label>
+</span> -->
+</div>       	  
+</div>  
+</div>
+</div>
+</div>
+</div>
+  
+<br><br>
+<!------------------------  select 기술정보 입력1 끝-------------------->               
+<!------------------------ select 기술정보 입력 2번줄 -------------------->              
+              
+<div class="form-group">
+	<div class="form-row"> 	
+		<div class="form-label-group"></div>
+		<div class="col-md-12">
+			<div class="form-label-group" >
+				<div class="form-control"> 
+					<div>	
+						<span>
+							<label>JS
+								<select name="major_tech">
+									<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>
+						&nbsp;&nbsp;
+						<span>
+							<label>JSP
+								<select name="major_tech">
+									<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>
+						&nbsp;&nbsp;
+						<span>
+							<label>SPRING
+								<select name="major_tech">
+									<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>
+						&nbsp;&nbsp;
+						<span>
+							<label>PHP
+								<select name="major_tech">
+									<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>
+						&nbsp;&nbsp;
+						<span>
+							<label>PYTHON
+								<select name="major_tech">
+									<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>	
+					</div>       	  
+				</div>  
+			</div>
+		</div>
+	</div>
+</div>
+<br><br>  
 
-            <div class="form-group">
-              <div class="form-row"> 	
-               <div class="form-label-group">개발언어</div>
-              	<div class="col-md-12">
-              	  <div class="form-label-group" >
-              	  <div class="form-control"> 
-              	  	<div>	
-              	  	<span>
-	              	  <label>.NET
-		              	  <select name="major_tech">
-		              	    <option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-		              	  </select>
-	              	  </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>C
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>C#
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>C++
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>JAVA
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<!-- <span>
-	              	 <label>JS
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span> -->
-	              	&nbsp;&nbsp;
-	              	<!-- <span>
-	              	 <label>JSP
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span> -->
-              	  	</div>       	  
-              	  </div>  
-                </div>
-              </div>
+<!------------------------ select 기술정보 입력 3번줄 -------------------->                
               
-              <br><br>
-               
- <!------------------------ select 기술정보 입력 2번줄 -------------------->              
-              
-               <div class="form-group">
-              <div class="form-row"> 	
-               <div class="form-label-group"></div>
-              	<div class="col-md-12">
-              	  <div class="form-label-group" >
-              	  <div class="form-control"> 
-              	  	<div>	
-              	  	<span>
-	              	  <label>JS
-		              	  <select name="major_tech">
-		              	    <option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-		              	  </select>
-	              	  </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>JSP
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>SPRING
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>PHP
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>PYTHON
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	         
-              	  	</div>       	  
-              	  </div>  
-                </div>
-              </div>
-              
-            <br><br>  
-   <!------------------------ select 기술정보 입력 3번줄 -------------------->                
-              
-              <div class="form-group">
-              <div class="form-row"> 	
-               <div class="form-label-group"></div>
-              	<div class="col-md-12">
-              	  <div class="form-label-group" >
-              	  <div class="form-control"> 
-              	  	<div>	
-              	  	<span>
-	              	  <label>ORACLE
-		              	  <select name="major_tech">
-		              	    <option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-		              	  </select>
-	              	  </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>MYSQL
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>MSSQL
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>ANDROID
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>IOS
-	              	  <select name="major_tech">
-	              	    	<option value="">선택</option>
-		              	    <option value="공통CODE">초급</option>
-		              	    <option value="공통CODE">중급</option>
-		              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	 </label>
-	              	</span>
-	         
-              	  	</div>       	  
-              	  </div>  
-                </div>
-              </div>
-              
-              
-              
-              
-              
- <!------------------------ select 디자인 언어 -------------------->               
-              
-              
-              
-              
-              
-              <br><br><br>
-              
-              
-              <div class="form-label-group">디자인언어</div>
-              	<div class="col-md-12">
-              	  <div class="form-label-group" >
-              	  <div class="form-control">        	  
-              	  	<span>
-              	  	 <label>HTML5
-	              	  <select name="major_tech">
-	              	    <option value="">선택</option>
-	              	    <option value="공통CODE">초급</option>
-	              	    <option value="공통CODE">중급</option>
-	              	    <option value="공통CODE">고급</option>
-	              	  </select>
-              	  	 </label>
-	              	</span>
-	              	&nbsp;&nbsp;
-	              	<span>
-	              	 <label>CSS
-	              	  <select name="major_tech">
-	              	    <option value="">선택</option>
-	              	    <option value="공통CODE">초급</option>
-	              	    <option value="공통CODE">중급</option>
-	              	    <option value="공통CODE">고급</option>
-	              	  </select>
-	              	  </label>
-	              	</span>
-              	  </div>
-                </div>
-              </div>
-              <br><br><br>
-           <!---------   기타언어 입력 ----------->
-             <div class="form-label-group">기타 기술정보</div>
-              	<div class="col-md-12">
-              	  <div class="form-label-group" >       	
-                <input type="text" id="use_tech1" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
-                <label for="add_tech">항목에 없는 기술정보를 입력하세요</label>
-              </div>
-            </div>
-      	   <!---------   기타언어 입력 끝----------->
-              </div>
-            </div>
+<div class="form-group">
+	<div class="form-row"> 	
+		<div class="form-label-group"></div>
+		<div class="col-md-12">
+			<div class="form-label-group" >
+				<div class="form-control"> 
+					<div>	
+						<span>
+							<label>ORACLE
+								<select name="major_tech">
+									<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>
+						&nbsp;&nbsp;
+						<span>
+							<label>MYSQL
+								<select name="major_tech">
+					 				<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>
+						&nbsp;&nbsp;
+						<span>
+							<label>MSSQL
+								<select name="major_tech">
+									<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>
+						&nbsp;&nbsp;
+						<span>
+							<label>ANDROID
+								<select name="major_tech">
+									<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>
+						&nbsp;&nbsp;
+						<span>
+							<label>IOS
+								<select name="major_tech">
+									<option value="">선택</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>
+									<option value="공통CODE">고급</option>
+								</select>
+							</label>
+						</span>				
+					</div>       	  
+				</div>  
+			</div>
+		</div>
+	<br><br><br>
+	          
+<!------------------------ select 디자인 언어 -------------------->               
+	        
+	<div class="form-label-group">디자인언어</div>
+		<div class="col-md-12">
+			<div class="form-label-group" >
+				<div class="form-control">        	  
+					<span>
+						<label>HTML5
+							<select name="major_tech">
+					 			<option value="">선택</option>
+								<option value="공통CODE">초급</option>
+								<option value="공통CODE">중급</option>
+								<option value="공통CODE">고급</option>
+							</select>
+						</label>
+					</span>
+					&nbsp;&nbsp;
+					<span>
+						<label>CSS
+							<select name="major_tech">
+								<option value="">선택</option>
+				 				<option value="공통CODE">초급</option>
+								<option value="공통CODE">중급</option>
+								<option value="공통CODE">고급</option>
+							</select>
+						</label>
+					</span>
+				</div>
+			</div>
+		</div>
+	<br><br><br>
+	
+	<!---------   기타언어 입력 ----------->
+	<div class="form-label-group">기타 기술정보</div>
+		<div class="col-md-12">
+			<div class="form-label-group" >       	
+				<input type="text" id="use_tech1" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
+				<label for="use_tech1">항목에 없는 기술정보를 입력하세요</label>
+			</div>
+		</div>	
+	<!---------   기타언어 입력 끝----------->
+	
+	</div>
+</div>
+<br><br><br>
             
 <!---------------------------- 기술정보 입력 끝----------------------->
-            <br><br><br>
             
             
 <!---------------------- 경력정보 입력 ------------------------->
-            <div class="card-header">Experience information</div>
-            <br>
-            
-            <div class="form-group">
-              <div class="form-row">
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="clinent_nm" name="client_nm" class="form-control" placeholder="Client Name" required="required" autofocus="autofocus">
-                    <label for="clinent_nm">Client Name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="client_loca1" name="client_loca1" class="form-control" placeholder="Client Location" required="required">
-                    <label for="client_loca1">Client Location1</label>
-                  </div>
-                </div>
-                <br><br><br>
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="duty" name="duty" class="form-control" placeholder="duty" required="required">
-                    <label for="duty">Duty</label>
-                  </div>
-                </div>
-                
-                 <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="task" name="task" class="form-control" placeholder="task" required="required">
-                    <label for="task">Task</label>
-                  </div>
-                </div>
-                 <br><br><br>
-                 <div class="col-md-6">
-                  <div class="form-label-group"> 
-                   <input type="text" id="work_str_date" name="work_str_date" class="form-control" placeholder="datepicker" required="required"/>              
-                    <label for="work_str_date">Work Start Date</label>
-                   </div>
-                </div>
-            
-                 <div class="col-md-6">
-                  <div class="form-label-group"> 
-                    <input type="text" id="work_end_date" name="work_end_date" class="form-control" placeholder="work_end_date" required="required"/>
-                    <label for="work_end_date">Work end date</label>
-                   </div>
-                </div>
-                
-                <br><br><br>
-                
-                <div class="col-md-12">
-                  <div class="form-label-group"> 
-                    <textarea type="text" id="contents" name="contents" class="form-control" placeholder="상세 개발 내용 기입" required="required"></textarea>
-                     <label for="contents"></label>
-                   </div>
-                </div>
-                
-                <br><br><br>
-                
-                <div class="col-md-6">
-                  <div class="form-label-group"> 
-                    <input type="text" id="use_tech_1" name="use_tech_1" class="form-control" placeholder="use_tech_1" required="required"/>
-                    <label for="use_tech_1">사용기술1</label>
-                   </div>
-                </div>
-                
-                 <div class="col-md-6">
-                  <div class="form-label-group"> 
-                    <input type="text" id="use_tech_2" name="use_tech_2" class="form-control" placeholder="use_tech_2" required="required"/>
-                    <label for="use_tech_2">사용기술2</label>
-                   </div>
-                </div>
-                
-                  <br><br><br>
-                  
-                   <div class="col-md-12">
-                  <div class="form-label-group"> 
-                    <input type="text" id="work_money" name="work_money" class="form-control" placeholder="work_money" required="required"/>
-                    <label for="work_money">Work money</label>
-                   </div>
-                </div>
-               
-                  
-                
-                
-                
-              </div>
-            </div>
-<!---------------------- 경력정보 입력 끝------------------------->
-            
-            <a class="btn btn-primary btn-block" href="login.html">Register</a>
-          </form>
-          <div class="text-center">
-            <a class="d-block small mt-3" href="/">Login Page</a>
-            <a class="d-block small" href="/Forgot-password">Forgot Password?</a>
-          </div>
-        </div>
-      </div>
-    </div>
-	          
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<div class="card-header">Experience information</div>
+<br>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
- 
+<div class="form-group">
+	<div class="form-row">
+		<div class="col-md-6">
+			<div class="form-label-group">
+				<input type="text" id="clinent_nm" name="client_nm" class="form-control" placeholder="Client Name" required="required" autofocus="autofocus">
+				<label for="clinent_nm">Client Name</label>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-label-group">
+				<select>
+					<option>
+				</select>
+				<input type="text" id="client_loca1" name="client_loca1" class="form-control" placeholder="Client Location" required="required">
+				<label for="client_loca1">Client Location1</label>
+			</div>
+		</div>
+		<br><br><br> 
+		
+		<div class="col-md-6">
+			<div class="form-label-group">
+				<input type="text" id="duty" name="duty" class="form-control" placeholder="duty" required="required">
+				<label for="duty">Duty</label>
+			</div>
+		</div>
+		
+		<div class="col-md-6">
+			<div class="form-label-group">
+				<input type="text" id="task" name="task" class="form-control" placeholder="task" required="required">
+				<label for="task">Task</label>
+			</div>
+		</div>
+		<br><br><br>
+		
+		<div class="col-md-6">
+			<div class="form-label-group"> 
+				<input type="text" id="work_str_date" name="work_str_date" class="form-control" placeholder="datepicker" required="required"/>              
+				<label for="work_str_date">Work Start Date</label>
+			</div>
+		</div>
+		
+		<div class="col-md-6">
+			<div class="form-label-group"> 
+				<input type="text" id="work_end_date" name="work_end_date" class="form-control" placeholder="work_end_date" required="required"/>
+				<label for="work_end_date">Work end date</label>
+			</div>
+		</div>
+		<br><br><br>
+		
+		<div class="col-md-12">
+			<div class="form-label-group"> 
+				<textarea id="contents" name="contents" class="form-control" placeholder="상세 개발 내용 기입" required="required"></textarea>
+				<label for="contents"></label>
+			</div>
+		</div>
+		<br><br><br>
+		
+		<div class="col-md-6">
+			<div class="form-label-group"> 
+				<input type="text" id="use_tech_1" name="use_tech_1" class="form-control" placeholder="use_tech_1" required="required"/>
+				<label for="use_tech_1">Main Technical Language</label>
+			</div>
+		</div>
+		
+		<div class="col-md-6">
+			<div class="form-label-group"> 
+				<input type="text" id="use_tech_2" name="use_tech_2" class="form-control" placeholder="use_tech_2" required="required"/>
+				<label for="use_tech_2">Sub Technical Language</label>
+			</div>
+		</div>               
+		<br><br><br>
+		  
+		<div class="col-md-12">
+			<div class="form-label-group"> 
+				<input type="text" id="work_money" name="work_money" class="form-control" placeholder="work_money" required="required"/>
+				<label for="work_money">Work money</label>
+			</div>
+		</div>
+	</div>
+</div>
+<!---------------------- 경력정보 입력 끝------------------------->
+          
+				<a class="btn btn-primary btn-block" href="login.html">Register</a>
+			</form>
+			<div class="text-center">
+				<a class="d-block small mt-3" href="/">Login Page</a>
+				<a class="d-block small" href="/Forgot-password">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+</div>
+       
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
+
 </body>
 </html>
