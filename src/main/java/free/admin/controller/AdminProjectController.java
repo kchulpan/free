@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import free.admin.service.ClientListService;
+import free.admin.service.FreelancerListService;
 import free.admin.service.ProjectListService;
+import free.admin.vo.ClientListVo;
+import free.admin.vo.FreelancerCallVo;
 import free.admin.vo.ProjectListVo;
 
 @Controller
@@ -20,12 +24,23 @@ public class AdminProjectController {
 	@Autowired
 	ProjectListService projectListService;
 	
+	@Autowired
+	FreelancerListService freelancerListService;
+	
+	@Autowired
+	ClientListService clientListService;
+	
 	/* 프로젝트조회 */
 	@RequestMapping("/Project")
 	public ModelAndView projectList(@RequestParam HashMap<String,Object> map) 
 	{
 		ModelAndView mav = new ModelAndView();
 		List<ProjectListVo> projectList = projectListService.projectList(map);
+		List<FreelancerCallVo> chargeList = freelancerListService.callChargeList();
+		List<ClientListVo> clientList = clientListService.clientList(map);
+		
+		mav.addObject("clientList", clientList);
+		mav.addObject("chargeList", chargeList);
 		mav.addObject("projectList", projectList);
 		mav.setViewName("ADMIN/02_PROJECT/project");
 		return mav;
