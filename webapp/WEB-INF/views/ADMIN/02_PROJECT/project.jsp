@@ -254,7 +254,7 @@ a {
 		});
 	});
 </script>
-<!-- <script>
+ <script>
 	$(document).ready(function(){
 		$('#inputModal').addClass('top_menu_active');
 		$('#inputModal').find('i').addClass('menu_icon_active');
@@ -263,8 +263,12 @@ a {
 		 $( "#project_str_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
 		 $( "#project_end_date" ).datepicker();
 		 $( "#project_end_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
+		 $( "#proj_str_date" ).datepicker();
+		 $( "#proj_str_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
+		 $( "#proj_end_date" ).datepicker();
+		 $( "#proj_end_date" ).datepicker( "option", "dateFormat", "yy-mm-dd");
 	});
-</script> -->
+</script> 
 </head>
 <!-------------------------------- body ---------------------------------------->
 <body>
@@ -334,8 +338,8 @@ a {
 							              <label for="proj_date">프로젝트 기간</label>
 							            
 						              	  <div>
-						              		<input type="text" name="proj_str_date" class="form-control" id="project_str_date" style="width:48%; float:left;" placeholder="시작일을 입력하세요" >
-						              		<input type="text" name="proj_end_date" class="form-control" id="project_end_date" style="width:48%; float:right;" placeholder="종료일을 입력하세요" >
+						              		<input type="text" name="proj_str_date" class="form-control" id="project_str_date" style="width:48%; float:left;" placeholder="시작일을 입력하세요" readonly="readonly">
+						              		<input type="text" name="proj_end_date" class="form-control" id="project_end_date" style="width:48%; float:right;" placeholder="종료일을 입력하세요" readonly="readonly">
 						              	  </div>
 							           </div>
 							            <div class="form-group">
@@ -433,9 +437,11 @@ a {
 							              
 							            </div>
 							            <div class="form-group">
-							              <label for="proj_date">프로젝트 기간</label>
-							             <div><input type="text" class="form-control" id="proj_str_date"  name="proj_str_date" style="width:48%; float:left;" placeholder="시작일을 입력하세요">
-							              <input type="text" class="form-control" id="proj_end_date" name="proj_end_date"  style="width:48%; float:right;" placeholder="종료일을 입력하세요"></div>
+							               <label for="proj_date">프로젝트 기간</label>
+							             <div>
+							             	<input type="text" class="form-control" id="proj_str_date"  name="proj_str_date" style="width:48%; float:left;" placeholder="시작일을 입력하세요" readonly>
+							             	<input type="text" class="form-control" id="proj_end_date" name="proj_end_date"  style="width:48%; float:right;" placeholder="종료일을 입력하세요" readonly>
+							             </div>
 							            </div>
 							            <div class="form-group">
 							              <label for="cli_id">고객사</label>
