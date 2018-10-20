@@ -1,4 +1,4 @@
-package free.client.daoImpl;
+
 /*package free.client.daoImpl;
 
 import org.apache.ibatis.session.SqlSession;

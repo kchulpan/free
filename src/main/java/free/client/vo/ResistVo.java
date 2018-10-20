@@ -1,4 +1,4 @@
-package free.client.vo;
+/*package free.client.vo;
 
 
 public class ResistVo {
@@ -157,3 +157,4 @@ public class ResistVo {
 	 
 
 }
+*/
