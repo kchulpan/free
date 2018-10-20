@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+  <mapper namespace="Email">
+  	<!-- 결과담을 Map 작성 -->
+   	<resultMap id="EmailSendMap" type="free.email.vo.EmailVo">
+  		<result property="freeln_phone"  column="FREELN_PHONE" 	javaType="string"/>
+  		<result property="freeln_mail"	 column="FREEN_MAIL" 	javaType="string"/>
+  		<result property="freeln_pwd"	 column="FREELN_PWD"	javaType="string"/>
+  	</resultMap>
+  
+  	
+
+   	<select id="EmailSendPwd"
+  			statementType="CALLABLE"
+  			parameterType= "hashmap"
+  			resultType="free.email.vo.EmailVo">
+		{CALL PKG_EMAIL.PROC_EMAIL_SENDPWD(
+		#{freeln_phone, mode=IN, jdbcType=VARCHAR},
+		#{freeln_mail, mode=IN, jdbcType=VARCHAR},
+		#{result,  mode=OUT, jdbcType=CURSOR, javaType=RESULTSET, resultMap=EmailSendMap}
+		)}
+  	</select>
+
+
+  	
+  	<!--
+  	<select id="BoardContent"
+  			statementType="CALLABLE"
+  			parameterType="">
+		{CALL PKG_BOARD.PROC_BOARD_CONTENT(
+		#{idx, mode=IN,  jdbcType=INTEGER},
+		#{result,  mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap=BoardListMap}
+		)}
+  	</select>
+  	
+  	<delete id="BoardDelete"
+  			statementType="CALLABLE"
+  			parameterType="">
+  			parameterType 은 전달받는 값의 Type임
+  			전달받는 값이 없을때는 쓸 필요없음
+		{CALL PKG_BOARD.PROC_BOARD_DELETE(
+		#{idx, mode=IN,  jdbcType=INTEGER}
+		)}
+  	</delete>
+  	-->
+  </mapper>

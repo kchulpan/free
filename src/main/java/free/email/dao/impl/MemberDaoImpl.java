@@ -1,26 +1,29 @@
 package free.email.dao.impl;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Repository;
 
 import free.email.dao.MemberDao;
+import free.email.vo.EmailVo;
 @Repository("memberDao")
 public class MemberDaoImpl implements MemberDao
 {
-	/*Logger log = Logger.getLogger(this.getClass());*/
 	
 	@Autowired
 	private SqlSession sqlSession;
-	
+
 	@Override
-	public String getPw(Map<String, Object> paramMap) {
-		sqlSession.selectOne("emailSendPw", paramMap);
-		return null;
+	public EmailVo sendEmailAction(HashMap<String, Object> map) {
+		sqlSession.selectOne("Email.EmailSendPwd", map);
+		List<EmailVo> freeln_pwd = (List<EmailVo>) map.get("result");
+		EmailVo emailVo = freeln_pwd.get(0);
+		System.out.println("dao:" + emailVo.getFreeln_pwd());
+		return emailVo;
 	}
 
 }

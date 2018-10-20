@@ -27,6 +27,20 @@ public class LoginController {
 	{
 		return "./LOGIN/forgot-password";
 	}
+	
+/*	@RequestMapping("/sendMail_Ok")
+	public String sendMailOk()
+	{
+		return "./LOGIN/sendMail_Ok";
+	}
+	
+	@RequestMapping("/sendMail_False")
+	public String sendMailFalse()
+	{
+		return "./LOGIN/sendMail_False";
+	}*/
+	
+	
 
 	
 

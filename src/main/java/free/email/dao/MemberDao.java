@@ -1,9 +1,13 @@
 package free.email.dao;
 
+import java.util.HashMap;
 import java.util.Map;
 
-public interface MemberDao {
+import free.email.vo.EmailVo;
 
-	String getPw(Map<String, Object> paramMap);
+public interface MemberDao 
+{
+
+	public EmailVo sendEmailAction(HashMap<String, Object> map);
 
 }

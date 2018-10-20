@@ -1,11 +1,10 @@
 package free.email.service;
 
-import java.util.Map;
+import java.util.HashMap;
+
 	 
 public interface MemberService 
 {
-	 
- String getPw(Map<String, Object> paramMap);
-	 
+	public String sendEmailAction(HashMap<String, Object> map); 
 }
 
