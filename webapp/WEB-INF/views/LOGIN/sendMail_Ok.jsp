@@ -13,10 +13,9 @@
 
 <title></title>
 <script type="text/javascript">
-window.open(function(){
-	alert("비밀번호가 발송 되었습니다");
-	location.href="LOGIN/login";
-})
+	alert("비밀번호가 전송되었습니다");
+	location.href="/sendMail_Ok";
+
 </script>
 
 </head>
@@ -24,7 +23,6 @@ window.open(function(){
 
 <body>
   <div>
-  	이멜 발송 완료
   </div>
  
 </body>

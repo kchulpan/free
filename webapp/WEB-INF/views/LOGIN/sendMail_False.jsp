@@ -13,7 +13,8 @@
 
 <title></title>
 <script type="text/javascript">
-window.open
+alert("등록된 이메일이 아닙니다");
+location.href="/sendMail_False";
 </script>
 
 </head>

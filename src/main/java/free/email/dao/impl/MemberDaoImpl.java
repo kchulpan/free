@@ -18,12 +18,11 @@ public class MemberDaoImpl implements MemberDao
 	private SqlSession sqlSession;
 
 	@Override
-	public EmailVo sendEmailAction(HashMap<String, Object> map) {
+	public List<EmailVo> sendEmailAction(HashMap<String, Object> map) {
 		sqlSession.selectOne("Email.EmailSendPwd", map);
 		List<EmailVo> freeln_pwd = (List<EmailVo>) map.get("result");
-		EmailVo emailVo = freeln_pwd.get(0);
-		System.out.println("dao:" + emailVo.getFreeln_pwd());
-		return emailVo;
+		/*EmailVo emailVo = freeln_pwd.get(0);*/
+		return freeln_pwd;
 	}
 
 }
