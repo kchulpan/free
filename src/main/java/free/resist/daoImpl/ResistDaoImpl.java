@@ -1,3 +1,4 @@
+package free.resist.daoImpl;
 
 /*package free.client.daoImpl;
 

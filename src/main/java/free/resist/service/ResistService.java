@@ -1,3 +1,4 @@
+package free.resist.service;
 /*package free.client.service;
 
 

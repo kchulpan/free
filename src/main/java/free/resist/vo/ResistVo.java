@@ -1,3 +1,4 @@
+package free.resist.vo;
 /*package free.client.vo;
 
 

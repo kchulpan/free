@@ -1,4 +1,4 @@
-package free.client.serviceImol;
+package free.resist.serviceImpl;
 /*package free.client.serviceImol;
 
 import java.io.PrintWriter;
