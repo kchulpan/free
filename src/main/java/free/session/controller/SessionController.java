@@ -42,7 +42,7 @@ public class SessionController
 			session = request.getSession();
 			session.setAttribute("userid", userid);
 			//프리랜서 메인 페이지로 가야함
-			mav.setViewName("LOGIN/register");
+			mav.setViewName("FREELNMAIN/freelnMain");
 			mav.addObject("vo",vo);
 		}
 		else if(check_id.equals("A"))//로그인 성공
