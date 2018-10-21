@@ -27,6 +27,7 @@
   		<result property="update_id" 			column="UPDATE_ID"				javaType="string"/>
   		<result property="update_date" 			column="UPDATE_DATE"			javaType="string"/>
   		<result property="career_year" 			column="CAREER_YEAR"			javaType="string"/>
+  		<result property="freeln_pwd" 			column="FREELN_PWD"				javaType="string"/>
   	</resultMap>
   	
   	<!-- 프리랜서 경력정보 리스트 -->

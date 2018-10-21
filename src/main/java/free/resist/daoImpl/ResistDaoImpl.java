@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import free.resist.dao.ResistDao;
+
 @Repository("resistDao")
 public class ResistDaoImpl implements ResistDao {
 

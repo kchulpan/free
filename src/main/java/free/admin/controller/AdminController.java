@@ -19,12 +19,12 @@ public class AdminController {
 	/*include*/
 
 	
-	@RequestMapping("/Freelancer")
+	/*@RequestMapping("/Freelancer")
 	public String Freelancer()
 	{
 		
 		return "CLIENT/client";
-	}
+	}*/
 	
 	
 	@RequestMapping("/Commoncode")
