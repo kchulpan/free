@@ -11,13 +11,13 @@ public class LoginController {
 	@RequestMapping("/")
 	public String logIn()
 	{
-		return "LOGIN/login";
+		return "./LOGIN/login";
 	}
 			
 	@RequestMapping("/SubPage")
 	public String subPage()
 	{
-		return "ADMIN/00_COMMON/sub_page";
+		return "./ADMIN/00_COMMON/sub_page";
 	}
 	@RequestMapping("/Register")
 	public String register()
