@@ -12,7 +12,12 @@
     <meta name="author" content="">
 <title>Login</title>
 
-
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	
+	<!-- Core plugin JavaScript-->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -34,9 +39,36 @@
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+	function registerCheckFunction() {
+		var userID = $('#inputId').val();
+		$.ajax({
+			type:'POST',
+			url:'./Register',
+			data:{inputId:inputId},
+			success:function(result){
+				if(result ==1 ){
+					$('#checkMessage').html('사용할 수 있는 아이디입니다.');
+					$('#checkType').attr('class','modal-content panel-success');
+				} else {
+					$('#checkMessage').html('사용할 수 없는 아이디입니다.');
+					$('#checkType').attr('class','modal-content panel-warning');
+				}
+				$('#checkModal').modal("show");
+			}
+		});
+	}
+	function passwordCheckFunction(){
+		var userPassword1 = $('#freeln_pwd').val();
+		var userPassword2 = $('#confirmPwd').val();
+		if(freeln_pwd != confirmPwd){
+			$('#passwordCheckMessage').html('비밀번호가 서로 일치하지 않습니다.');
+		} else {
+			$('#passwordCheckMessage').html('');
+		}
+	}
+</script>  	
 <!-- datepicker를 위한 링크 끝 -->
-
-
 <script>
 $(function(){
 	   $('#upload').change(function(){
@@ -80,11 +112,24 @@ $(function(){
    
 
 <body class="bg-dark">
+<%
+	String freeln_phone = null;
+	if(session.getAttribute("freeln_phone") != null){
+		freeln_phone = (String) session.getAttribute("freeln_phone");
+	if(freeln_phone != null){
+		session.setAttribute("messageType", "오류메시지");
+		session.setAttribute("messageContent", "로그인이 되어 있는 상태입니다.");
+		response.sendRedirect("index.jsp");
+		return;
+	 	}
+	}
+	%>
 	<div class="container">
 		<div class="card card-register mx-auto mt-5">
 			<div class="card-header">Register an Account</div>
 			<div class="card-body">
-				<form>
+				<form method="POST" action="/SubPage">
+				<form action="/NewFreeLnRegist" method="POST">
 				
 				<!-- 사진입력 -->
 				
@@ -118,8 +163,8 @@ $(function(){
 						</div>
 						<div class="col-md-6">
 							<div class="form-label-group">
-								<input type="text" id="freeln_phone" name="freeln_phone" class="form-control" placeholder="Cell Phone ex)010-1111-2222" required="required">
-								<label for="freeln_phone">Cell Phone ex)010-1111-2222</label>
+								<input type="text" id="freeln_phone" name="freeln_phone" class="form-control" placeholder='"-"없이 입력하세요' required="required">
+								<label for="freeln_phone">핸드폰번호 : "-"없이 입력하세요</label>
 							</div>
 						</div>
 					</div>
@@ -129,7 +174,7 @@ $(function(){
 				<!-- 이메일 입력 -->
 				<div class="form-group">
 					<div class="form-label-group">
-						<input type="email" id="freeln_mail" name="freeln_mail" class="form-control" placeholder="Email address" required="required">
+						<input type="email" id="freeln_mail" name="freen_mail" class="form-control" placeholder="Email address" required="required">
 						<label for="freeln_mail">Email address</label>
 					</div>
 				</div>
@@ -445,8 +490,8 @@ $(function(){
 	<div class="form-label-group">기타 기술정보</div>
 		<div class="col-md-12">
 			<div class="form-label-group" >       	
-				<input type="text" id="use_tech1" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
-				<label for="use_tech1">항목에 없는 기술정보를 입력하세요</label>
+				<input type="text" id="add_tech" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
+				<label for="add_tech">항목에 없는 기술정보를 입력하세요</label>
 			</div>
 		</div>	
 	<!---------   기타언어 입력 끝----------->
@@ -466,19 +511,50 @@ $(function(){
 	<div class="form-row">
 		<div class="col-md-6">
 			<div class="form-label-group">
-				<input type="text" id="clinent_nm" name="client_nm" class="form-control" placeholder="Client Name" required="required" autofocus="autofocus">
-				<label for="clinent_nm">Client Name</label>
+				<input type="text" id="client_nm" name="client_nm" class="form-control" placeholder="Client Name" required="required" autofocus="autofocus">
+				<label for="client_nm">Client Name</label>
 			</div>
 		</div>
-		<div class="col-md-6">
+		 <div class="col-md-6">
 			<div class="form-label-group">
-				<select>
-					<option>
-				</select>
-				<input type="text" id="client_loca1" name="client_loca1" class="form-control" placeholder="Client Location" required="required">
-				<label for="client_loca1">Client Location1</label>
+			   <!-- <label for="client_local_1">
+			       <select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			          <option>지역1</option>
+			          <option>지역2</option>      
+			       </select>
+			   </label>		 -->   		
+				<!-- <input type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required"> 
+				<label for="client_local_1">Client Location1</label> -->
+			
+			 <span>
+							<label for="client_local_1">
+								<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+									<option value="">지역선택1</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>	
+								</select>
+							</label>
+						</span>
+						
+						<span>  
+							<label for="client_local_1">
+								<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+									<option value="">지역선택2</option>
+									<option value="공통CODE">초급</option>
+									<option value="공통CODE">중급</option>	
+								</select>
+							</label>
+						</span>
+			
+			
+			
+			
+			
+			
+			
 			</div>
 		</div>
+
 		<br><br><br> 
 		
 		<div class="col-md-6">
@@ -543,8 +619,14 @@ $(function(){
 	</div>
 </div>
 <!---------------------- 경력정보 입력 끝------------------------->
+
+          		<input class="btn btn-primary btn-block" type="submit" value="회원가입">
+				
+
           
-				<a class="btn btn-primary btn-block" href="login.html">Register</a>
+				<!-- <a class="btn btn-primary btn-block" href="login.html">Register</a> -->
+				<button class="btn btn-primary btn-block" >Register</button>
+
 			</form>
 			<div class="text-center">
 				<a class="d-block small mt-3" href="/">Login Page</a>
@@ -553,13 +635,76 @@ $(function(){
 		</div>
 	</div>
 </div>
+<%
+	String messageContent = null;
+	if(session.getAttribute("messageContent") != null) {
+		messageContent = (String) session.getAttribute("messageContent");
+	}	
+	String messageType = null;
+	if(session.getAttribute("messageType") != null) {
+		messageType = (String) session.getAttribute("messageType");
+	}	
+	if (messageContent != null){
+	%>
+	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div class="modal-content" <%if(messageType.equals("오류메시지")) out.println("panel-warning"); else out.println("panel-success"); %>">
+					<div class="modal-header panel-heading">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times</span>
+							<span class="sr-only">close</span>
+							
+						</button>
+						<h4 class="modal-title">
+							<%= messageType %>
+						</h4>
+					</div>
+					<div class="modal-body">
+						<%= messageContent%>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('#messageModal').modal("show");
+	</script>
+		
+	<%
+	session.removeAttribute("messageContent");
+	session.removeAttribute("messageType");
+	}
+	%>	
+	<div class="modal fade" id="checkModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="vertical-alignment-helper">
+			<div class="modal-dialog vertical-align-center">
+				<div class="modal-content panel-info" id="checkType">
+					<div class="modal-header panel-heading">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times</span>
+							<span class="sr-only">close</span>
+							
+						</button>
+						<h4 class="modal-title">
+							확인메시지
+						</h4>
+					</div>
+					<div class="modal-body" id="checkMessage">
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
        
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
 
 </body>
 </html>

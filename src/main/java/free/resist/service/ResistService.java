@@ -1,12 +1,9 @@
 package free.resist.service;
-/*package free.client.service;
 
+import java.util.HashMap;
 
-import javax.servlet.http.HttpServletResponse;
+public interface ResistService {
 
-public interface FreeLnService {
-
-	void check_id(String freeLn_id, HttpServletResponse response) throws Exception;
+	void NewFreeLnRegist(HashMap<String, Object> map);
 
 }
-*/

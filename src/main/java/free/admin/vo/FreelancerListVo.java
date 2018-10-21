@@ -21,6 +21,7 @@ public class FreelancerListVo {
 	private String update_id;
 	private String update_date;
 	private String career_year;
+	private String freeln_pwd;
 	
 	//getter setter
 	public String getFreeln_id() {
@@ -145,13 +146,20 @@ public class FreelancerListVo {
 	public void setCareer_year(String career_year) {
 		this.career_year = career_year;
 	}
+	public String getFreeln_pwd() {
+		return freeln_pwd;
+	}
+	public void setFreeln_pwd(String freeln_pwd) {
+		this.freeln_pwd = freeln_pwd;
+	}
+	
 	//constructor
 	public FreelancerListVo() {}
 	public FreelancerListVo(String freeln_id, String freeln_nm, String freeln_phone, String freeln_tel,
 			String freen_mail, String freen_addr_1, String freen_addr_2, String hope_place, String hope_money,
 			String hope_call_str_time, String hope_call_end_time, String major_tech, String note, String img_nm,
 			String in_enable_date, String insert_id, String insert_date, String update_id, String update_date,
-			String career_year) {
+			String career_year, String freeln_pwd) {
 		super();
 		this.freeln_id = freeln_id;
 		this.freeln_nm = freeln_nm;
@@ -173,8 +181,10 @@ public class FreelancerListVo {
 		this.update_id = update_id;
 		this.update_date = update_date;
 		this.career_year = career_year;
+		this.freeln_pwd = freeln_pwd;
 	}
 	
+	//toString
 	@Override
 	public String toString() {
 		return "FreelancerListVo [freeln_id=" + freeln_id + ", freeln_nm=" + freeln_nm + ", freeln_phone="
@@ -183,8 +193,11 @@ public class FreelancerListVo {
 				+ hope_money + ", hope_call_str_time=" + hope_call_str_time + ", hope_call_end_time="
 				+ hope_call_end_time + ", major_tech=" + major_tech + ", note=" + note + ", img_nm=" + img_nm
 				+ ", in_enable_date=" + in_enable_date + ", insert_id=" + insert_id + ", insert_date=" + insert_date
-				+ ", update_id=" + update_id + ", update_date=" + update_date + ", career_year=" + career_year + "]";
+				+ ", update_id=" + update_id + ", update_date=" + update_date + ", career_year=" + career_year
+				+ ", freeln_pwd=" + freeln_pwd + "]";
 	}
+	
+	
 
 	
 	

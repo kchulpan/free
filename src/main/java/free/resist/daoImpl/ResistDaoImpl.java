@@ -1,41 +1,30 @@
 package free.resist.daoImpl;
 
-/*package free.client.daoImpl;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import free.client.dao.FreeLnDao;
-import free.client.vo.FreeLnVo;
+import free.resist.dao.ResistDao;
 
-@Repository("freeLnDao")
-public class FreeLnDaoImpl implements FreeLnDao {
+@Repository("resistDao")
+public class ResistDaoImpl implements ResistDao {
+
 	
 	@Autowired
-	private SqlSession sqlSession = null;
+	SqlSession sqlSession;
 	
 	@Override
-	//���̵� �ߺ��˻�
-	public int check_id(String freeln_id) throws Exception{
-		return sqlSession.selectOne("FreeLn.check_id", freeln_id);
+	public void NewFreeLnRegist(HashMap<String, Object> map) 
+	{
+		System.out.println("던지는 값:" + map);
+		sqlSession.insert("Client_Reg.ClientReginsert", map);
+		
 	}
-	
-	@Override
-	//�̸��� �ߺ��˻�
-	public int check_email(String freeln_email) throws Exception{
-		return sqlSession.selectOne("FreeLn.check_email", freeln_email);
-	}
-	
-	@Override
-	//ȸ������
-	public int freeLn(FreeLnVo freeLn) throws Exception{
-		return sqlSession.insert("FreeLn.freeln", freeLn);
-	}
-	
-	
-	
-	
-	
+
+
+
+
+
 }
-*/
