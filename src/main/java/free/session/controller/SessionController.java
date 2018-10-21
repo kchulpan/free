@@ -32,9 +32,11 @@ public class SessionController
 		//map{userid, userpass}
 		ModelAndView mav = new ModelAndView();
 		
-		SessionVo vo  = sessionService.login(map);
-		String check_id = (String)(vo.getUserid().substring(0, 1));
-		if(check_id.equals("0"))//로그인 성공
+		SessionVo vo = sessionService.login(map);
+		
+		String checkId = vo.getUserid();
+		System.out.println("로그인id비교:"+checkId);
+		if(checkId.startsWith("0"))//로그인 성공
 		{
 			System.out.println("프리랜서 로그인 성공");
 			String userid = vo.getUserid();
@@ -45,14 +47,14 @@ public class SessionController
 			mav.setViewName("FREELNMAIN/freelnMain");
 			mav.addObject("vo",vo);
 		}
-		else if(check_id.equals("A"))//로그인 성공
+		else if(checkId.startsWith("A"))//로그인 성공
 		{
 			System.out.println("관리자 로그인 성공");
 			String userid = vo.getUserid();
 			
 			session = request.getSession();
 			session.setAttribute("userid", userid);
-			mav.setViewName("ADMIN/00_COMMON/sub_page");
+			mav.setViewName("ADMIN/00_COMMON/commoncode");
 			mav.addObject("vo",vo);
 		}
 		else //로그인 실패

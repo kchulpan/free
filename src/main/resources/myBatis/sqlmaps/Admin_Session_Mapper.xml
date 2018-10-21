@@ -6,9 +6,9 @@
   <mapper namespace="Admin">
   	<!-- 결과담을 Map 작성 -->
    	<resultMap id="SessionAdminMap" type="free.session.vo.SessionVo">
-  		<result property="userid"    column="FREELN_PHONE" javaType="string"/>
-  		<result property="userpass"	 column="FREELN_PWD"   javaType="string"/>
-  		<result property="username"	 column="FREELN_NM"    javaType="string"/>
+  		<result property="userid"    column="ADMIN_ID" javaType="string"/>
+  		<result property="userpass"	 column="ADMIN_PWD"   javaType="string"/>
+  		<result property="username"	 column="ADMIN_NM"    javaType="string"/>
   	</resultMap>
   
   	

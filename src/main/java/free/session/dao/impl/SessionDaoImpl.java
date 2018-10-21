@@ -19,22 +19,22 @@ public class SessionDaoImpl implements SessionDao
 	@Override
 	public SessionVo login(HashMap<String, Object> map) 
 	{
-		String userid = (String) map.get("userid");
-		String idCheck = userid.substring(0, 1);
+		String userid =  String.valueOf(map.get("userid"));
 		SessionVo vo = null;
-
-		if(idCheck.equals("0"))
+		System.out.println("던지는맵:"+map);
+		if(userid.startsWith("0"))
 		{
 			sqlSession.selectOne("Freeln.FreeLnSession", map);
-			List<SessionVo> listvo = (List<SessionVo>) map.get("result");
+			List<SessionVo> listvo = (List<SessionVo >) map.get("result");
 			vo = listvo.get(0);
 			
 		}
-		if(idCheck.equals("A"))
+		else if(userid.startsWith("A"))
 		{
 			sqlSession.selectOne("Admin.AdminSession", map);
 			List<SessionVo> listvo = (List<SessionVo>) map.get("result");
-			vo = listvo.get(0);	
+			System.out.println("가져온값:" +listvo);
+			vo = listvo.get(0);
 		}
 		else
 		{
