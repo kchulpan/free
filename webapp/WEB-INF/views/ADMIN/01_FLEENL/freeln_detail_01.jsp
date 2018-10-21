@@ -98,7 +98,7 @@
 	        <th>이름</th>
 	        <td>${freelancer.freeln_nm}</td>
 	        <td rowspan="5" id="photo_can"> 
-	        	<img src="/img/subpage/${freelancer.freeln_id}.jpg"/>
+	        	<img src="/img/subpage/${freelancer.img_nm}"/>
 	        </td>
 	      </tr>
 	      <tr>
