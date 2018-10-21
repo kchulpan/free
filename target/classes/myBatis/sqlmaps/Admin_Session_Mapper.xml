@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+  <mapper namespace="Admin">
+  	<!-- 결과담을 Map 작성 -->
+   	<resultMap id="SessionAdminMap" type="free.session.vo.SessionVo">
+  		<result property="userid"    column="FREELN_PHONE" javaType="string"/>
+  		<result property="userpass"	 column="FREELN_PWD"   javaType="string"/>
+  		<result property="username"	 column="FREELN_NM"    javaType="string"/>
+  	</resultMap>
+  
+  	
+<select id="AdminSession"
+	statementType="CALLABLE"
+	parameterType="HashMap"
+	resultType="free.session.vo.SessionVo">
+<!--  	  	SELECT FREELN_PHONE, FREELN_PWD, FREELN_NM
+  		FROM   FREELN_TBL
+  		WHERE  FREELN_PHONE = #{userid}
+  		AND    FREELN_PWD = #{userpass} -->
+  		{CALL PKG_SESSION.PROC_SESSION_ADMIN(
+		#{userid, mode=IN, jdbcType=VARCHAR},
+		#{userpass, mode=IN, jdbcType=VARCHAR},
+		#{result,  mode=OUT, jdbcType=CURSOR, javaType=RESULTSET, resultMap=SessionAdminMap}
+		)}
+</select>
+
+ 
+
+  	
+
+  	
+
+  	
+  	<!--
+  	<select id="BoardContent"
+  			statementType="CALLABLE"
+  			parameterType="">
+		{CALL PKG_BOARD.PROC_BOARD_CONTENT(
+		#{idx, mode=IN,  jdbcType=INTEGER},
+		#{result,  mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap=BoardListMap}
+		)}
+  	</select>
+  	
+  	<delete id="BoardDelete"
+  			statementType="CALLABLE"
+  			parameterType="">
+  			parameterType 은 전달받는 값의 Type임
+  			전달받는 값이 없을때는 쓸 필요없음
+		{CALL PKG_BOARD.PROC_BOARD_DELETE(
+		#{idx, mode=IN,  jdbcType=INTEGER}
+		)}
+  	</delete>
+  	-->
+  </mapper>
