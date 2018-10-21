@@ -198,6 +198,7 @@ a {
 			var field_1 = $(this).find(".field_1").html();
 			var field_2 = $(this).find(".field_2").val();
 			var remark = $(this).find(".remark").children("p").html();
+			var project_amount = $(this).find(".project_amount").html();
 			var need_tech = $(this).find(".need_tech").html();
 	 	    var client_nm = $(this).find(".client_nm").html();   
 
@@ -210,6 +211,7 @@ a {
 			console.log(field_1);
 			console.log(field_2);
 			console.log(remark);
+			console.log(project_amount);
 			console.log(need_tech);
 	 		console.log(client_nm); 
 			/* 
@@ -235,6 +237,7 @@ a {
 			$(".modal-body #fid_1").val(field_1);
 			$(".modal-body #fid_2").val(field_2);
 			$(".modal-body #rmark").val(remark);
+			$(".modal-body #proj_amount").val(project_amount);
 			$(".modal-body #need_tec").val(need_tech);
 	 	 	 $(".modal-body #cli_nm").val(client_nm);  
 
@@ -396,6 +399,10 @@ a {
 															    	</c:forEach>												
 															    </select>
 															    </div> 
+															    <div class="form-group">
+																	 <label for="project_amount">금액</label>
+																    <input type="text" class="form-control" id="project_amount" name="project_amount"/>
+																  </div>  
 																<div>
 																	<label for="use_yn">사용유무</label> <input id="use_yn"
 																		type="checkbox" name="use_yn" value="Y">
@@ -494,6 +501,10 @@ a {
 										    	</c:forEach> 
 										    </select>
 										    </div>
+										    <div class="form-group">
+											 <label for="proj_amount">금액</label>
+										    <input type="text" class="form-control" id="proj_amount" name="project_amount"/>
+										  </div>  
 										    <div>
 										   		<label for="use_yn">사용유무</label>
 							   					<input id="us_yn" type="checkbox" name="use_yn" value="Y">
@@ -557,15 +568,16 @@ a {
 												<thead>
 													<tr role="row" style="text-align: center; font-size: 13px;">
 														<th onclick="sortTable(0)" style="width: 6%; height: 5%">순번</th>
-														<th onclick="sortTable(1)" style="width: 20%; height: 5%">프로젝트명</th>
+														<th onclick="sortTable(1)" style="width: 17%; height: 5%">프로젝트명</th>
 														<th onclick="sortTable(2)" style="width: 12%; height: 5%">프로젝트기간</th>
 														<!-- <th onclick="sortTable(3)">프로젝트종료일</th> -->
 														<th onclick="sortTable(3)" style="width: 10%; height: 5%">고객사</th>
-														<th onclick="sortTable(4)" style="width: 20%; height: 5%">필요기술</th>
+														<th onclick="sortTable(4)" style="width: 17%; height: 5%">필요기술</th>
 														<th onclick="sortTable(5)" style="width: 10%; height: 5%">해당분야</th>
 														<th onclick="sortTable(6)" style="width: 6%; height: 5%">투여인원</th>
 														<th onclick="sortTable(7)" style="width: 10%; height: 5%">담당자</th>
-														<th onclick="sortTable(8)" style="width: 6%; height: 5%">상세내용</th>
+														 <th onclick="sortTable(8)" style="width: 6%; height: 5%">금액</th>
+														<th onclick="sortTable(9)" style="width: 6%; height: 5%">상세내용</th>
 													</tr>
 												</thead>
 												<tfoot>
@@ -579,7 +591,8 @@ a {
 														<th onclick="sortTable(5)" rowspan="1" colspan="1">해당분야</th>
 														<th onclick="sortTable(6)" rowspan="1" colspan="1">투여인원</th>
 														<th onclick="sortTable(7)" rowspan="1" colspan="1">담당자</th>
-														<th onclick="sortTable(8)" rowspan="1" colspan="1">상세내용</th>
+													    <th onclick="sortTable(8)" rowspan="1" colspan="1">금액</th>
+														<th onclick="sortTable(9)" rowspan="1" colspan="1">상세내용</th>
 													</tr>
 												</tfoot>
 												<tbody>
@@ -608,6 +621,7 @@ a {
 															<td><a href="#" data-toggle="modal" class="idClick field_1" data-target="#inputModal2" data-id="field_1">${proj.field_1}</a></td>
 															<td><a href="#" data-toggle="modal" class="idClick involve_num" data-target="#inputModal2" data-id="involve_num">${proj.involve_num}</a></td>
 															<td><a href="#" data-toggle="modal" class="idClick charge_id" data-target="#inputModal2" >${proj.charge_nm}</a></td>
+															 <td><a href="#" data-toggle="modal" class="idClick project_amount" data-target="#inputModal2" data-id="project_amount">${proj.project_amount}</a></td> 
 															<td><a href="#" data-toggle="modal" class="idClick remark" data-target="#inputModal3" data-id="remark">상세내용<p hidden>${proj.remark}</p></a></td>
 															<%--   <td><a href="#" data-toggle="modal" class="idClick field_2" data-target="#inputModal2" data-id="field_2" >${proj.field_2}</a></td> --%>
 															<%-- 	<td> <a href="#" data-toggle="modal" class="idClick charge_nm" data-target="#inputModal2" data-id="charge_nm" >${proj.charge_nm}</a></td> --%>

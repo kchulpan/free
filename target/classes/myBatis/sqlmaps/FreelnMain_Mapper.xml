@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+  <mapper namespace="FreelnMain">
+  	<!-- 결과담을 Map 작성 -->
+  	<!-- 프로젝트 리스트 -->
+   	<resultMap id="ProjectListForMainMap" type="free.main.vo.ProjectListVo">
+  		<result property="proj_id"			column="PROJ_ID" 			javaType="string"/>
+  		<result property="freeln_nm"	 	column="FREELN_NM" 			javaType="string"/>
+  		<result property="proj_str_date"	column="PROJ_STR_DATE" 		javaType="string"/>
+  		<result property="proj_end_date"	column="PROJ_END_DATE" 		javaType="string"/>
+  		<result property="client_id"	 	column="CLIENT_ID" 			javaType="string"/>
+  		<result property="involve_num"	 	column="INVOLVE_NUM"   		javaType="int"/>
+  		<result property="need_tech"  		column="NEED_TECH" 			javaType="string"/>
+  		<result property="field_1" 			column="FIELD_1"			javaType="string"/>
+  		<result property="field_2" 			column="FIELD_2"			javaType="string"/>
+  		<result property="note" 			column="NOTE"				javaType="string"/>
+  		<result property="remark" 			column="REMARK"				javaType="string"/>
+  		<result property="use_yn" 		  	column="USE_YN"				javaType="string"/>
+  		<result property="update_id" 		column="UPDATE_ID"			javaType="string"/>
+  		<result property="update_date" 		column="UPDATE_DATE"		javaType="string"/>
+  		<result property="project_amount" 	column="PROJECT_AMOUNT"		javaType="string"/>
+  		<result property="client_nm" 	  	column="CLIENT_NM"			javaType="string"/>
+  		<result property="client_addr_1" 	column="CLIENT_ADDR_1"		javaType="string"/>
+  		<result property="client_addr_2" 	column="CLIENT_ADDR_2"		javaType="string"/>
+  		<result property="client_file" 		column="CLIENT_FILE"		javaType="string"/>
+  		<result property="client_file_nm" 	column="CLIENT_FILE_NM"		javaType="string"/>
+  	</resultMap>
+  	
+  	<!-- 프리랜서 경력정보 리스트 -->
+   <!-- 	<resultMap id="FreelancerCareerMap" type="free.admin.vo.FreelancerCareerVo">
+  		<result property="freeln_id"			column="FREELN_ID" 				javaType="string"/>
+  		<result property="freeln_nm"	 		column="FREELN_NM" 				javaType="string"/>
+  		<result property="freeln_phone"		 	column="FREELN_PHONE" 			javaType="string"/>
+  		<result property="career_num"		 	column="career_num" 			javaType="int"/>
+  		<result property="client_nm"	 		column="client_nm" 				javaType="string"/>
+  		<result property="client_loca_1"	 	column="client_loca_1" 			javaType="string"/>
+  		<result property="client_loca_2"	 	column="client_loca_2"   		javaType="string"/>
+  		<result property="duty"  				column="duty" 					javaType="string"/>
+  		<result property="task" 				column="task"					javaType="string"/>
+  		<result property="work_str_date" 		column="work_str_date"			javaType="string"/>
+  		<result property="work_end_date" 		column="work_end_date"			javaType="string"/>
+  		<result property="contents" 			column="contents"				javaType="string"/>
+  		<result property="use_tech_1" 		  	column="use_tech_1"				javaType="string"/>
+  		<result property="use_tech_2" 			column="use_tech_2"				javaType="string"/>
+  		<result property="work_money" 			column="work_money"				javaType="string"/>
+  		<result property="insert_id" 	  		column="insert_id"				javaType="string"/>
+  		<result property="insert_date" 		  	column="insert_date"			javaType="string"/>
+  		<result property="update_id" 			column="update_id"				javaType="string"/>
+  		<result property="update_date" 			column="update_date"			javaType="string"/>
+  	</resultMap> -->
+  	
+  	<!-- 프리랜서 통화내역 리스트 -->
+   	<!-- <resultMap id="FreelancerCallMap" type="free.admin.vo.FreelancerCallVo">
+  		<result property="charge_id"			column="CHARGE_ID" 				javaType="string"/>
+  		<result property="charge_nm"	 		column="CHARGE_NM" 				javaType="string"/>
+  		<result property="freeln_id"		 	column="FREELN_ID" 				javaType="string"/>
+  		<result property="call_num"		 		column="CALL_NUM" 				javaType="int"/>
+  		<result property="call_date"	 		column="CALL_DATE" 				javaType="string"/>
+  		<result property="call_note"	 		column="CALL_NOTE" 				javaType="string"/>
+  		<result property="in_enable_date"	 	column="IN_ENABLE_DATE"   		javaType="string"/>
+  	</resultMap> -->
+  		
+  		
+   	<select id="ProjectList"
+  			statementType="CALLABLE"
+  			parameterType= "hashmap"
+  			resultType="free.main.vo.ProjectListVo">
+		{CALL PKG_FREELNMAIN.PROC_PROJECT_LIST(
+		#{result,  mode=OUT, jdbcType=CURSOR, javaType=RESULTSET, resultMap=ProjectListForMainMap}
+		)}
+  	</select>
+  	
+  	<insert id="ProjectSignUp"
+  			statementType="CALLABLE"
+  			parameterType= "hashmap">
+  		{CALL PKG_FREELNMAIN.PROC_PROJECT_SIGN_UP(
+  		 #{freeln_id, mode=IN, jdbcType=VARCHAR}
+		,#{project_id, mode=IN, jdbcType=VARCHAR}	
+		,#{result_val, mode=OUT, jdbcType=INTEGER, javaType=int}
+		)}
+  	</insert>
+ 
+  </mapper>

@@ -20,6 +20,7 @@
       <result property="charge_id"         column="CHARGE_id"     javaType="String" />    
       <result property="charge_nm"         column="CHARGE_NM"     javaType="String" />    
       <result property="remark"            column="REMARK"        javaType="String" />    
+      <result property="project_amount"    column="PROJECT_AMOUNT"  javaType="String" />    
       <result property="use_yn"            column="USE_YN"        javaType="String" />    
     </resultMap> 	
   
@@ -35,6 +36,7 @@
 		    #{field_1, mode=IN, jdbcType=VARCHAR},
 		    #{field_2, mode=IN, jdbcType=VARCHAR},
 		    #{remark, mode=IN, jdbcType=VARCHAR},
+		    #{project_amount, mode=IN, jdbcType=VARCHAR},
 		    #{need_tech, mode=IN, jdbcType=VARCHAR},
 		    #{use_yn, mode=IN, jdbcType=VARCHAR},
 		    #{charge_id, mode=IN, jdbcType=VARCHAR}
@@ -75,6 +77,7 @@
   		#{field_1, mode=IN, jdbcType=VARCHAR},
   		#{field_2, mode=IN, jdbcType=VARCHAR},
   		#{remark, mode=IN, jdbcType=VARCHAR},
+  		#{project_amount, mode=IN, jdbcType=VARCHAR},
   		#{need_tech, mode=IN, jdbcType=VARCHAR},
   		#{use_yn, mode=IN, jdbcType=VARCHAR}
   		)}
