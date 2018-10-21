@@ -11,7 +11,7 @@ public class LoginController {
 	@RequestMapping("/")
 	public String logIn()
 	{
-		return "./LOGIN/login";
+		return "LOGIN/login";
 	}
 			
 	@RequestMapping("/SubPage")
