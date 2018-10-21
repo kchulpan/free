@@ -26,6 +26,10 @@ public class SessionDaoImpl implements SessionDao
 		{
 			sqlSession.selectOne("Freeln.FreeLnSession", map);
 			List<SessionVo> listvo = (List<SessionVo >) map.get("result");
+			if(listvo.get(0) == null)
+			{
+
+			}
 			vo = listvo.get(0);
 			
 		}

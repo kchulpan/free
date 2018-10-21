@@ -108,6 +108,52 @@ $(function(){
 </script>
 <!-- 데이트 피커 끝 -->
 
+<!-- 아이디 중복 체크 시작-->
+<script>
+//아이디 체크여부 확인 (아이디 중복일 경우 = 0 , 중복이 아닐경우 = 1 )
+var idck = 0;
+$(function() {
+    //idck 버튼을 클릭했을 때 
+    $("#idDoubleCheck").click(function() {
+        
+        //userid 를 param.
+        var userid =  $("#freeln_phone").val(); 
+        
+        $.ajax({
+            async: true,
+            type : 'POST',
+            data : userid,
+            url : "IdDoubleCheck",
+            dataType : "json",
+            contentType: "application/json; charset=UTF-8",
+            success : function(data) {
+                if (data.cnt > 0) {
+                    
+                    alert("핸드폰번호가 존재합니다. 다른 핸드폰번호를 입력해주세요.");
+                    $("#freeln_phone").focus();
+                    
+                
+                } else {
+                    alert("사용가능한 핸드폰번호입니다.");
+                    $("#freeln_mail").focus();
+                    //아이디가 중복하지 않으면  idck = 1 
+                    idck = 1;
+                    
+                }
+            },
+            error : function(error) {
+                
+                alert("error : " + error);
+            }
+        });
+    });
+});
+
+</script>
+
+<!-- 아이디 중복 체크 끝-->
+
+
 </head>
    
 
@@ -128,7 +174,7 @@ $(function(){
 		<div class="card card-register mx-auto mt-5">
 			<div class="card-header">Register an Account</div>
 			<div class="card-body">
-				<form method="POST" action="/SubPage">
+				<!-- <form method="POST" action="/SubPage"> -->
 				<form action="/NewFreeLnRegist" method="POST">
 				
 				<!-- 사진입력 -->
@@ -166,6 +212,7 @@ $(function(){
 								<input type="text" id="freeln_phone" name="freeln_phone" class="form-control" placeholder='"-"없이 입력하세요' required="required">
 								<label for="freeln_phone">핸드폰번호 : "-"없이 입력하세요</label>
 							</div>
+							<input id="idDoubleCheck" type="button" value="중복확인">
 						</div>
 					</div>
 				</div>

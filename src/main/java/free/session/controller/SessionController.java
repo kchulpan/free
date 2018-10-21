@@ -33,34 +33,36 @@ public class SessionController
 		ModelAndView mav = new ModelAndView();
 		
 		SessionVo vo = sessionService.login(map);
-		
-		String checkId = vo.getUserid();
-		System.out.println("로그인id비교:"+checkId);
-		if(checkId.startsWith("0"))//로그인 성공
-		{
-			System.out.println("프리랜서 로그인 성공");
-			String userid = vo.getUserid();
-			
-			session = request.getSession();
-			session.setAttribute("userid", userid);
-			//프리랜서 메인 페이지로 가야함
-			mav.setViewName("FREELNMAIN/freelnMain");
-			mav.addObject("vo",vo);
-		}
-		else if(checkId.startsWith("A"))//로그인 성공
-		{
-			System.out.println("관리자 로그인 성공");
-			String userid = vo.getUserid();
-			
-			session = request.getSession();
-			session.setAttribute("userid", userid);
-			mav.setViewName("ADMIN/00_COMMON/commoncode");
-			mav.addObject("vo",vo);
-		}
-		else //로그인 실패
-		{
+		if(vo == null) {
+			//로그인 실패		
 			System.out.println("로그인 실패");
 			mav.setViewName("LOGIN/login");
+		}
+		else 
+		{
+			String checkId = vo.getUserid();
+			System.out.println("로그인id비교:"+checkId);
+			if(checkId.startsWith("0"))//로그인 성공
+			{
+				System.out.println("프리랜서 로그인 성공");
+				String userid = vo.getUserid();
+				
+				session = request.getSession();
+				session.setAttribute("userid", userid);
+				//프리랜서 메인 페이지로 가야함
+				mav.setViewName("FREELNMAIN/freelnMain");
+				mav.addObject("vo",vo);
+			}
+			else if(checkId.startsWith("A"))//로그인 성공
+			{
+				System.out.println("관리자 로그인 성공");
+				String userid = vo.getUserid();
+				
+				session = request.getSession();
+				session.setAttribute("userid", userid);
+				mav.setViewName("ADMIN/00_COMMON/commoncode");
+				mav.addObject("vo",vo);
+			}
 		}
 		return mav;
 	}

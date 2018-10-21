@@ -23,6 +23,13 @@ public class ResistDaoImpl implements ResistDao {
 		
 	}
 
+	@Override
+	public int idcheck(String userid) 
+	{
+		int count = sqlSession.selectOne("Client_Reg.idDoubleCheck",userid);
+		return count;
+	}
+
 
 
 

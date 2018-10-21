@@ -6,9 +6,7 @@
     
     <mapper namespace="Client_Reg">
     
-     	<resultMap id="ClientReg" type="free.resist.vo.ResistVo">
-        
-         
+     	<resultMap id="ClientReg" type="free.resist.vo.ResistVo"> 
          <result property="img_nm"         column="IMG_NM"         javaType="string"/>
          <result property="freeln_nm"      column="FREELN_NM"      javaType="string"/>
          <result property="freen_mail"     column="FREEN_MAIL"     javaType="string"/>
@@ -35,6 +33,15 @@
          <result property="freeln_id"       column="FREELN_ID"        javaType="string"/>
          
 		 </resultMap>
+    
+     	
+     	<!-- 아이디 중복체크 -->
+     	<select id="idDoubleCheck" parameterType="String" resultType="Integer">
+      			SELECT COUNT(*) FROM FREELN_TBL
+      			WHERE FREELN_PHONE = #{userid}
+		</select>
+     	
+     	
 		 
     <insert id="ClientReginsert" statementType="CALLABLE" parameterType="free.resist.vo.ResistVo">
 		

@@ -28,6 +28,17 @@ public class ResistVo {
 	 
 	 private String freeln_pwd;
 	 private String freeln_id;
+	 
+	 //아이디 중복 검사용
+	 private int userid;
+	 
+	 
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
 	public String getImg_nm() {
 		return img_nm;
 	}
@@ -156,14 +167,7 @@ public class ResistVo {
 				+ ", client_local_2=" + client_local_2 + ", task=" + task + ", duty=" + duty + ", work_str_date="
 				+ work_str_date + ", work_end_date=" + work_end_date + ", contents=" + contents + ", use_tech_1="
 				+ use_tech_1 + ", use_tech_2=" + use_tech_2 + ", work_money=" + work_money + ", freeln_pwd="
-				+ freeln_pwd + ", freeln_id=" + freeln_id + "]";
+				+ freeln_pwd + ", freeln_id=" + freeln_id + ", userid=" + userid + "]";
 	}
-	
-	 
-	
-	 
-
-	 
-	 
 
 }

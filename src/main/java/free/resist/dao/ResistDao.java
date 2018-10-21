@@ -6,4 +6,6 @@ public interface ResistDao {
 
 	void NewFreeLnRegist(HashMap<String, Object> map);
 
+	int idcheck(String userid);
+
 }

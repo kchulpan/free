@@ -13,12 +13,19 @@ public class ResistServiceImpl implements ResistService {
 	@Autowired
 	ResistDao resistDao;
 	
-	
 	@Override
 	public void NewFreeLnRegist(HashMap<String, Object> map) 
 	{
 		resistDao.NewFreeLnRegist(map);
 		
+	}
+
+
+	@Override
+	public int idcheck(String userid) 
+	{
+		int count = resistDao.idcheck(userid);
+		return count;
 	}
 
 }
