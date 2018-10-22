@@ -5,17 +5,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+	a { text-decoration: none;
+    	color: black;
+      }
+    a:hover {color:white;}
+</style>
 </head>
 <body>
 <div id="title"><a class="title_logo" href="/"><span>D</span>djy</a></div>
     <div id="myPage">
-       <img src="/img/subpage/profile_photo.jpg" id="profile_photo" />
-       <span>ㅇㅇㅇ님</span>
+       <img src="/img/subpage/admin.png" id="profile_photo" /> 
+       <span>관리자님</span>
        <i class="fa fa-angle-down down_arrow" style="font-size:24px;"></i>
     </div>
     <div class="hidden_myPage">
-	       <div>정보변경</div>
-	       <div>로그아웃</div>
+	       <!-- <div>정보변경</div> -->
+	       <div><a href="/Logout">로그아웃</a></div>
     </div>
 </body>
 </html>
