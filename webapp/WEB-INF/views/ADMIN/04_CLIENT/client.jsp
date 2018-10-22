@@ -228,7 +228,14 @@ function fileHidden() {
 		});
 	});
 </script>
-
+<!-- 메뉴버튼눌렀을때 hover 유지 -->
+<script>
+	$(document).ready(function(){
+		$('#client').addClass('top_menu_active');
+		$('#client').find('i').addClass('menu_icon_active');
+	});
+	</script>
+<!-- 메뉴버튼눌렀을때 hover 유지 끝-->
 
 
 </head>

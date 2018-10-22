@@ -1,6 +1,7 @@
 package free.session.controller;
 
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import free.admin.vo.FreelancerCareerVo;
+import free.main.service.MainFreelnService;
+import free.main.vo.ProjectListVo;
 import free.session.service.SessionService;
 import free.session.vo.SessionVo;
 
@@ -23,6 +27,8 @@ public class SessionController
 	
 	@Autowired
 	private SessionService sessionService;
+	@Autowired
+	MainFreelnService mainFreelnService;
 	
 	@RequestMapping("/LoginProcess")
 	public ModelAndView loginProcess(
@@ -32,6 +38,13 @@ public class SessionController
 		//map{userid, userpass}
 		ModelAndView mav = new ModelAndView();
 		
+		//project list
+		List<ProjectListVo> projectList = mainFreelnService.projectList(map);	
+		mav.addObject("projectList", projectList);
+		
+		
+		
+		// login session 프리랜서 - 관리자 분류
 		SessionVo vo = sessionService.login(map);
 		if(vo == null) {
 			//로그인 실패		
@@ -49,6 +62,11 @@ public class SessionController
 				
 				session = request.getSession();
 				session.setAttribute("userid", userid);
+				
+				//career list
+				List<FreelancerCareerVo> freelancerCareer = mainFreelnService.freelancerCareerList(map);
+				mav.addObject("freelancerCareer", freelancerCareer);
+				
 				//프리랜서 메인 페이지로 가야함
 				mav.setViewName("FREELNMAIN/freelnMain");
 				mav.addObject("vo",vo);
@@ -64,6 +82,8 @@ public class SessionController
 				mav.addObject("vo",vo);
 			}
 		}
+		
+		
 		return mav;
 	}
 	

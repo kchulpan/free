@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import free.admin.vo.FreelancerCareerVo;
 import free.main.dao.MainFreelnDao;
 import free.main.service.MainFreelnService;
 import free.main.vo.ProjectListVo;
@@ -27,6 +28,12 @@ public class MainFreelnServiceImpl implements MainFreelnService {
 	public int projectSignUp(HashMap<String, Object> map) {
 		int result_val = mainFreelnDao.projectSignUp(map);
 		return result_val;
+	}
+
+	@Override
+	public List<FreelancerCareerVo> freelancerCareerList(HashMap<String, Object> map) {
+		List<FreelancerCareerVo> freelancerCareer = mainFreelnDao.freelancerCareerList(map);
+		return freelancerCareer;
 	}
 
 }

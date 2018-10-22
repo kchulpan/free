@@ -33,6 +33,11 @@
     
     <style>
     	a:hover {text-decoration: none;}
+    	li>a {color:white;}
+    	li>a:hover {color:white; font-weight: bolder;}
+    	li {display: inline-block;
+		    list-style: none;
+		    padding: 10px;}
     </style>
     <script>
     $(function(){
@@ -88,11 +93,11 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/ModifyMyInfo">My Info</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
+           <!--  <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="">Chat</a>
-            </li> 
+            </li>  -->
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="">Logout</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/Logout">Logout</a>
             </li> 
           </ul>
         </div>
@@ -102,8 +107,18 @@
     <!-- 프로젝트 리스트 -->
     <header class="masthead bg-primary text-white text-center portfolio">
       <div class="container">
-        <h1 class="text-center text-uppercase mb-0">Project List</h1>
+        <h2 class="text-center text-uppercase mb-0">Project List</h2>
         <hr class="star-light">
+        
+        <%-- <c:forEach var="pagenum" begin="${startnum}" end="${endnum}" step="1"> --%>
+			<!-- <ul>
+				<li><a href="">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+			</ul> -->
+		<%-- </c:forEach> --%>
+        
+        
         <div class="row">
         
         <c:forEach var="projectList" items="${projectList}" varStatus="status">
