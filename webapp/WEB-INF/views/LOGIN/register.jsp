@@ -267,7 +267,232 @@ $(function() {
 				<!-- 희망근무지역, 희망월급여 끝-->
             
 <!------------------------  select 기술정보 입력1 -------------------->
-<div class="card-header">Technical information</div>
+
+ 
+ <div class="card-header">Technical information 개발 언어 선택</div>
+ <br>
+ 
+ 
+ <div class="col-md-12">
+ <div class="col-md-3" style="float:left;">
+ <label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">.NET</option>
+		    <option value=".NET초급">초급</option>
+	        <option value=".NET중급">중급</option>
+	        <option value=".NET고급">고급</option>	
+	</select>
+		</label>
+		</div>
+		
+		
+	<div class="col-md-3" style="float:left;">
+	 <label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">C</option>
+		    <option value="C초급">초급</option>
+	        <option value="C중급">중급</option>
+	        <option value="C고급">고급</option>	
+	</select>
+		</label>
+		</div>
+		 	
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">C#</option>
+		    <option value="C#초급">초급</option>
+	        <option value="C#중급">중급</option>
+	        <option value="C#고급">고급</option>	
+	</select>
+		</label>
+		</div>
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">C++</option>
+		    <option value="C++초급">초급</option>
+	        <option value="C++중급">중급</option>
+	        <option value="C++고급">고급</option>	
+	</select>
+		</label>
+		</div>	
+		
+		<br><br>
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">JAVA</option>
+		    <option value="JAVA초급">초급</option>
+	        <option value="JAVA중급">중급</option>
+	        <option value="JAVA고급">고급</option>	
+	</select>
+		</label>
+		</div>	
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">JS</option>
+		    <option value="JS초급">초급</option>
+	        <option value="JS중급">중급</option>
+	        <option value="JS고급">고급</option>	
+	</select>
+		</label>
+		</div>	
+		
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">JSP</option>
+		    <option value="JSP초급">초급</option>
+	        <option value="JSP중급">중급</option>
+	        <option value="JSP고급">고급</option>	
+	</select>
+		</label>
+		</div>
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">SPRING</option>
+		    <option value="SPRING초급">초급</option>
+	        <option value="SPRING중급">중급</option>
+	        <option value="SPRING고급">고급</option>	
+	</select>
+		</label>
+		</div>
+		<br><br>
+		
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">PHP</option>
+		    <option value="PHP초급">초급</option>
+	        <option value="PHP중급">중급</option>
+	        <option value="PHP고급">고급</option>	
+	</select>
+		</label>
+		</div>
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">ORACLE</option>
+		    <option value="ORACLE초급">초급</option>
+	        <option value="ORACLE중급">중급</option>
+	        <option value="ORACLE고급">고급</option>	
+	</select>
+		</label>
+		</div>
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">PHP</option>
+		    <option value="MYSQL초급">초급</option>
+	        <option value="MYSQL중급">중급</option>
+	        <option value="MYSQL고급">고급</option>	
+	</select>
+		</label>
+		</div>
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">MSSQL</option>
+		    <option value="MSSQL">초급</option>
+	        <option value="MSSQL중급">중급</option>
+	        <option value="MSSQL고급">고급</option>	
+	</select>
+		</label>
+		</div>
+		
+		<br><br>
+		
+		<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">ANDROID</option>
+		    <option value="ANDROID초급">초급</option>
+	        <option value="ANDROID중급">중급</option>
+	        <option value="ANDROID고급">고급</option>	
+	</select>
+		</label>
+		</div>				
+
+
+
+
+</div>
+
+<br><br><br>
+
+<div class="card-header">Technical information 디자인 개발 언어 선택</div>
+<br>
+
+<div class="col-md-12">
+	<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+			<select style="display:inline-block; overflow:hidden;" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+					<option  value="">HTML5</option>
+				    <option value=".NET초급">초급</option>
+			        <option value=".NET중급">중급</option>
+			        <option value=".NET고급">고급</option>	
+			</select>
+		</label>
+	</div>	
+	<div class="col-md-3" style="float:left;">
+		<label for="client_local_1">
+	<select  style="display:inline-block; overflow:hidden;" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">PHOTOSHOP</option>
+		    <option value="PHOTOSHOP초급">초급</option>
+	        <option value="PHOTOSHOP중급">중급</option>
+	        <option value="PHOTOSHOP고급">고급</option>	
+	</select>
+		</label>
+	</div>
+		
+	<div class="col-md-3"  style="float:left;">	
+		<label for="client_local_1" >
+	<select id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">ILLUST</option>
+		    <option value="ILLUST초급">초급</option>
+	        <option value="ILLUST중급">중급</option>
+	        <option value="ILLUST고급">고급</option>	
+	</select>
+		</label>
+     </div>
+     <div class="col-md-3"  style="float:left;">	
+		<label for="client_local_1" >
+	<select id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<option value="">CSS</option>
+		    <option value="ILLUST초급">초급</option>
+	        <option value="ILLUST중급">중급</option>
+	        <option value="ILLUST고급">고급</option>	
+	</select>
+		</label>
+     </div>
+     
+     
+     
+<div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card-header">Technical information</div>
 <br>
 <div class="form-group">
 <div class="form-row"> 	
@@ -331,7 +556,7 @@ $(function() {
 </label>
 </span>
 &nbsp;&nbsp;
-<!-- <span>
+<span>
 <label>JS
 <select name="major_tech">
 <option value="">선택</option>
@@ -340,9 +565,9 @@ $(function() {
 <option value="공통CODE">고급</option>
 </select>
 </label>
-</span> -->
+</span>
 &nbsp;&nbsp;
-<!-- <span>
+<span>
 <label>JSP
 <select name="major_tech">
 <option value="">선택</option>
@@ -351,19 +576,19 @@ $(function() {
 <option value="공통CODE">고급</option>
 </select>
 </label>
-</span> -->
+</span>
 </div>       	  
 </div>  
 </div>
 </div>
 </div>
-</div>
+</div> -->
   
-<br><br>
+<br><br><br>
 <!------------------------  select 기술정보 입력1 끝-------------------->               
 <!------------------------ select 기술정보 입력 2번줄 -------------------->              
               
-<div class="form-group">
+<!-- <div class="form-group">
 	<div class="form-row"> 	
 		<div class="form-label-group"></div>
 		<div class="col-md-12">
@@ -432,7 +657,7 @@ $(function() {
 </div>
 <br><br>  
 
-<!------------------------ select 기술정보 입력 3번줄 -------------------->                
+---------------------- select 기술정보 입력 3번줄 ------------------                
               
 <div class="form-group">
 	<div class="form-row"> 	
@@ -501,7 +726,7 @@ $(function() {
 		</div>
 	<br><br><br>
 	          
-<!------------------------ select 디자인 언어 -------------------->               
+---------------------- select 디자인 언어 ------------------               
 	        
 	<div class="form-label-group">디자인언어</div>
 		<div class="col-md-12">
@@ -530,17 +755,24 @@ $(function() {
 					</span>
 				</div>
 			</div>
-		</div>
-	<br><br><br>
+		</div> -->
 	
 	<!---------   기타언어 입력 ----------->
-	<div class="form-label-group">기타 기술정보</div>
-		<div class="col-md-12">
+	<div class="card-header" style="clear:both;">Technical information 기타 기술정보</div>
+	<br>
+		<!-- <div class="col-md-12">
 			<div class="form-label-group" >       	
 				<input type="text" id="add_tech" name="add_tech" class="form-control" placeholder="항목에 없는 기술정보를 입력하세요" required="required">
+				<label >항목에 없는 기술정보를 입력하세요</label>
+			
+		</div>	 -->
+		
+		<div class="col-md-12">
+			<div class="form-label-group"> 
+				<input type="text" id="add_tech" name="add_tech" class="form-control" placeholder="add_tech" required="required"/>
 				<label for="add_tech">항목에 없는 기술정보를 입력하세요</label>
 			</div>
-		</div>	
+		</div>
 	<!---------   기타언어 입력 끝----------->
 	
 	</div>
@@ -577,8 +809,8 @@ $(function() {
 							<label for="client_local_1">
 								<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
 									<option value="">지역선택1</option>
-									<option value="공통CODE">초급</option>
-									<option value="공통CODE">중급</option>	
+									<option value="공통CODE">서울</option>
+									<option value="공통CODE">경기</option>	
 								</select>
 							</label>
 						</span>
@@ -587,8 +819,8 @@ $(function() {
 							<label for="client_local_1">
 								<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
 									<option value="">지역선택2</option>
-									<option value="공통CODE">초급</option>
-									<option value="공통CODE">중급</option>	
+									<option value="공통CODE">송파구</option>
+									<option value="공통CODE">강남구</option>	
 								</select>
 							</label>
 						</span>
