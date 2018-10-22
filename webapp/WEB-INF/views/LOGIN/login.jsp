@@ -40,12 +40,12 @@
         <div class="card-body">
           <form method="POST" action="/LoginProcess">
             <div class="form-group">
-              <div>
+<!--               <div>
               	<input type="radio" name="login" id="freelnLog">
               	<label for="freelnLog">프리랜서</label>&nbsp;&nbsp;
               	<input type="radio" name="login" id="chgLog">
               	<label for="chgLog">담당자</label>
-              </div>
+              </div> -->
               <div class="form-label-group">
                 <input type="text" id="user_id" class="form-control" name="userid" placeholder="id" required="required" autofocus="autofocus">
                 <label for="inputId">아이디를 입력하세요</label>
@@ -57,17 +57,17 @@
                 <label for="inputPassword">비밀번호를 입력하세요</label>
               </div>
             </div>
-            <div class="form-group">
+<!--             <div class="form-group">
               <div class="checkbox">
                 <label>
                   <input type="checkbox" value="remember-me">
                   비밀번호 저장하기
                 </label>
               </div>
-            </div>
+            </div> -->
             
             	<input class="btn btn-primary btn-block" type="submit" value="로그인">
-            	<input class="btn btn-primary btn-block" type="submit" value="관리자페이지">         
+            	<!-- <input class="btn btn-primary btn-block" type="submit" value="관리자페이지"> -->         
           </form>
 
           <div class="text-center">
