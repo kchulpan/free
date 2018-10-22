@@ -30,7 +30,7 @@
   	</resultMap>
   	
   	<!-- 프리랜서 경력정보 리스트 -->
-   <!-- 	<resultMap id="FreelancerCareerMap" type="free.admin.vo.FreelancerCareerVo">
+    	<resultMap id="FreelnCareerMap" type="free.admin.vo.FreelancerCareerVo">
   		<result property="freeln_id"			column="FREELN_ID" 				javaType="string"/>
   		<result property="freeln_nm"	 		column="FREELN_NM" 				javaType="string"/>
   		<result property="freeln_phone"		 	column="FREELN_PHONE" 			javaType="string"/>
@@ -50,7 +50,7 @@
   		<result property="insert_date" 		  	column="insert_date"			javaType="string"/>
   		<result property="update_id" 			column="update_id"				javaType="string"/>
   		<result property="update_date" 			column="update_date"			javaType="string"/>
-  	</resultMap> -->
+  	</resultMap>
   	
   	<!-- 프리랜서 통화내역 리스트 -->
    	<!-- <resultMap id="FreelancerCallMap" type="free.admin.vo.FreelancerCallVo">
@@ -70,6 +70,16 @@
   			resultType="free.main.vo.ProjectListVo">
 		{CALL PKG_FREELNMAIN.PROC_PROJECT_LIST(
 		#{result,  mode=OUT, jdbcType=CURSOR, javaType=RESULTSET, resultMap=ProjectListForMainMap}
+		)}
+  	</select>
+  	
+  	<select id="FreelnCareerList"
+  			statementType="CALLABLE"
+  			parameterType= "hashmap"
+  			resultType="free.admin.vo.FreelancerCareerVo">
+		{CALL PKG_FREELNMAIN.PROC_FREELN_CAREER_LIST(
+		#{result,  mode=OUT, jdbcType=CURSOR, javaType=RESULTSET, resultMap=FreelnCareerMap}
+		,#{freeln_phone, mode=IN, jdbcType=VARCHAR}
 		)}
   	</select>
   	
