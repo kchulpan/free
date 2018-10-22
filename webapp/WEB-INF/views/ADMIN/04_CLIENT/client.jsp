@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>DDJY University</title>
+<title>고객사 관리</title>
 <!-- 테이블관련 CSS/JS 시작 --------------------------------->
 
 <!-- Bootstrap core CSS-->
@@ -218,13 +218,27 @@ function fileHidden() {
 <script>
 	$(document).ready(function() {
 		$("#updateBtn").click(function() {
-			$("#modalForm").attr("action", "/ClientUpdate");
-			$("#modalForm").submit();
+			if(confirm("수정하시겠습니까?") == true) //확인 
+				{
+					$("#modalForm").attr("action", "/ClientUpdate");
+					$("#modalForm").submit();
+				}
+			else
+				{
+					return;
+				}
 		});
 
 		$("#deleteBtn").click(function() {
-			$("#modalForm").attr("action", "/ClientDelete");
-			$("#modalForm").submit();
+			if(confirm("삭제하시겠습니까??") == true)//삭제
+				{
+					$("#modalForm").attr("action", "/ClientDelete");
+					$("#modalForm").submit();				
+				}
+			else
+				{
+					return;
+				}
 		});
 	});
 </script>
@@ -430,8 +444,8 @@ function fileHidden() {
 																<i class="fa fa-user icon"></i>수정/삭제
 															</h5>
 														</div>
+													<form id="modalForm" method="POST" role="form">
 														<div class="modal-body">
-															<form id="modalForm" method="POST" role="form">
 																<div class="form-group">
 																	<label for="cli_id">고객사 아이디</label> <input type="text"
 																		id="cli_id" name="client_id" class="form-control"

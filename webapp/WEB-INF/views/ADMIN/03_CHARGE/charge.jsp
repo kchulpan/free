@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>담당자관리/조회</title>
+<title>담당자관리</title>
 	<!-- 테이블관련 CSS/JS 시작 -->
 	
 	<!-- Bootstrap core CSS-->
@@ -39,6 +39,7 @@
 
 	<!-- js -->
 	<script src="js/include/subpage.js"></script>
+<!-- 메뉴버튼눌렀을때 hover 유지 -->
 	<script>
 		$(document).ready(function(){
 			$('#charge').addClass('top_menu_active');
@@ -46,7 +47,8 @@
 			/* $('.btn-group > button:nth-of-type(1)').focus(); */
 		});
 	</script>
-	
+<!-- 메뉴버튼눌렀을때 hover 유지 끝-->
+
 	<!-- modal -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
@@ -185,13 +187,27 @@ function sortTable(n) {
 <script>
 $(document).ready(function(){
 	$("#deletebtn").click(function(){
-		$("#modalform").attr("action", "/ChargeDelete");
-		$("#modalform").submit();
+		if(confirm("삭제하시겠습니까??")== true)
+			{
+				$("#modalform").attr("action", "/ChargeDelete");
+				$("#modalform").submit();			
+			}
+		else
+		{
+			return;
+		}
 	});
 	
 	$("#updatebtn").click(function(){
-		$("#modalform").attr("action", "/ChargeUpdate");
-		$("#modalform").submit();
+		if(confirm("수정하시겠습니까?")==true)
+			{
+				$("#modalform").attr("action", "/ChargeUpdate");
+				$("#modalform").submit();		
+			}
+		else
+			{
+				return;
+			}
 	});
 });
 	
@@ -232,7 +248,7 @@ $(document).ready(function(){
   
   <div id="main_templet">
   <div id="slide_btn"></div>
-  
+   
 <!-- side_menu -->
   <nav class="nav">
   	<%@ include file="../include/nav.jspf" %>
@@ -240,29 +256,31 @@ $(document).ready(function(){
 
 <!-- main -->
   <article>
-   	<div class="tabs">
-    </div>
+   	<div class="tabs"></div>
     	
     <div class="content-wrapper"> 
     <!-- 테이블내용 시작 -->
     	<div class="card mb-3">
     		<div class="card-header">
-    			<i class="fas fa-fw fa-users"></i>
-    			담당자 조회/관리
+    			<i class="fas fa-fw fa-users"></i>담당자 관리
     		</div>
     		<div class="card-body">
     			<div class="table-responsive">
-    				<div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+    				<div id="dataTable_wrapper" 
+    					class="dataTables_wrapper dt-bootstrap4">
     					<div class="row">		
     						<div class="col-sm-12 col-md-11">
 	    						<div id="dataTable_filter" class="dataTables_filter">
-    								<label>담당자명:
-    									<input type="text" class="form-control form-control-sm" placeholder="담당자명을 입력하세요" aria-controls="dataTable" id="myInput" onkeyup="myFunction()">
+    								<label>Search: <input type="text"
+    									 class="form-control form-control-sm" 
+    									 placeholder="담당자명을 입력하세요" aria-controls="dataTable" 
+    									 id="myInput" onkeyup="myFunction()">
 	    							</label>
 	    						</div>
     						</div>
     						<div class="col-sm-12 col-md-1">	
-    							<button type="button" class="btn btn-primary btn-sm" id="myBtn" data-toggle="modal" data-target="#inputModal">등록</button>
+    							<button type="button" class="btn btn-primary btn-sm" 
+    								id="myBtn" data-toggle="modal" data-target="#inputModal">등록</button>
 
 <!-------------------------- The Modal 새담당자등록 ------------------------->
 								  <!-- Modal -->
@@ -325,6 +343,7 @@ $(document).ready(function(){
 
 <!-------------------------- The Modal 수정/삭제 ---------------------------->
 								  <!-- Modal -->
+						
   							  <div class="modal fade" id="inputModal2" role="dialog">
 							    <div class="modal-dialog" role="document">
 							    
@@ -386,8 +405,12 @@ $(document).ready(function(){
 							    </div> 
 							  </div>
 <!-------------------------- The Modal 수정/삭제 끝---------------------------->
-    					</div>
-    					<div class="row">
+
+<!-------------------------- 조회 리스트 테이블---------------------------->
+    					
+              			</div>
+           			</div>
+           			<div class="row">
     						<div class="col-sm-12">
     						<table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                   				<thead>
@@ -443,14 +466,14 @@ $(document).ready(function(){
 									  </c:forEach>
 				                </tbody>
                 			</table>
-              			</div>
-           			</div>
+           			
          	  </div>
     		</div>			
    		 </div> 			
  	 </div> 	
    </div>
-  </div>
+ </div>
+</div>
    <!-- 테이블내용 끝 -->   	
   </article>
 </div> 
