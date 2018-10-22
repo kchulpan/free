@@ -192,19 +192,19 @@ $(function(){
 			<div class="card-header">Register an Account</div>
 			<div class="card-body">
 				<!-- <form method="POST" action="/SubPage"> -->
-				<form action="/LoginProcess" method="POST">
+				<%-- <form action="" method="POST">
 				<input type="hidden" name="userid" value="${freeln.freeln_phone}"/>
-				<input type="hidden" name="userpass" value="${freeln.freeln_pwd}"/>
+				<input type="hidden" name="userpass" value="${freeln.freeln_pwd}"/> --%>
+				
 				<!-- 사진입력 -->
 				
 				<article>
 					<div>
-						<!-- <img id="img" src="#" width="225" height="300"> -->
-						<img src="/img/subpage/${freeln.img_nm}" style="width: 150px; height: 200px;"/>
+						<img src="/img/subpage/${freeln.img_nm}" width="150" height="200"/>
 					</div>
-					<!-- <div>
+					<div>
 						<input type="file" id="upload" name="img_nm">
-					</div> -->
+					</div>
 				</article>
 					<br><br>
 
@@ -215,18 +215,18 @@ $(function(){
 					<div class="form-row">
 						<div class="col-md-6">
 							<div class="form-label-group">
-								<input type="text" id="freeln_nm" class="form-control" 
+								<input type="text" id="freeln_nm" name="freeln_nm" class="form-control" 
 								value="${freeln.freeln_nm}" required="required" autofocus="autofocus">
 								<label for="freeln_nm">Full name</label>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-label-group">
-								<input type="text" id="freeln_phone" class="form-control" 
+								<input type="text" id="freeln_phone" name="freeln_phone" class="form-control" 
 									value="${freeln.freeln_phone}" required="required">
 								<label for="freeln_phone">핸드폰번호 : "-"없이 입력하세요</label>
 							</div>
-							<!-- <input id="idDoubleCheck" type="button" value="중복확인"> -->
+							<input id="idDoubleCheck" type="button" value="중복확인">
 						</div>
 					</div>
 				</div>
@@ -235,7 +235,7 @@ $(function(){
 				<!-- 이메일 입력 -->
 				<div class="form-group">
 					<div class="form-label-group">
-						<input type="email" id="freeln_mail"  class="form-control" 
+						<input type="email" id="freeln_mail" name="freen_mail" class="form-control" 
 								value="${freeln.freen_mail}" required="required">
 						<label for="freeln_mail">Email address</label>
 					</div>
@@ -247,7 +247,7 @@ $(function(){
 					<div class="form-row">
 						<div class="col-md-6">
 							<div class="form-label-group">
-								<input type="password" id="freeln_pwd" 
+								<input type="password" id="freeln_pwd" name="freeln_pwd"
 								 class="form-control" value="${freeln.freeln_pwd}" required="required">
 								<label for="freeln_pwd">Password</label>
 							</div>
@@ -268,14 +268,14 @@ $(function(){
 					<div class="form-row">
 						<div class="col-md-6">
 							<div class="form-label-group">
-								<input type="text" id="hope_place"  class="form-control" 
+								<input type="text" id="hope_place" name="hope_place" class="form-control" 
 								 value="${freeln.hope_place}" required="required">
 								<label for="hope_place">Hope working area</label>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-label-group">
-								<input type="text" id="hope_money" class="form-control" 
+								<input type="text" id="hope_money" name="hope_money" class="form-control" 
 								value="${freeln.hope_money}" required="required">
 								<label for="hope_money">Desired wage</label>
 							</div>
@@ -288,7 +288,7 @@ $(function(){
 <!------------------------  select 기술정보 입력1 -------------------->
 
  
- <!-- <div class="card-header">Technical information 개발 언어 선택</div>
+  <div class="card-header">Technical information 개발 언어 선택</div>
  <br>
  
  
@@ -502,11 +502,11 @@ $(function(){
 <div>
 
   
-<br><br><br> -->
+<br><br><br> 
 
 	
 	<!---------   기타언어 입력 ----------->
-	<!-- <div class="card-header" style="clear:both;">Technical information 기타 기술정보</div>
+	 <div class="card-header" style="clear:both;">Technical information 기타 기술정보</div>
 	<br>
 		
 		<div class="col-md-12">
@@ -514,18 +514,18 @@ $(function(){
 				<input type="text" id="technic_18" name="major_tech" class="form-control"/>
 				<label for="technic_18">항목에 없는 기술정보를 입력하세요</label>
 			</div>
-		</div> -->
+		</div> 
 	<!---------   기타언어 입력 끝----------->
 	
 <!-- 	</div>
 </div>
-<br><br><br> -->
+<br><br><br> 
             
 <!---------------------------- 기술정보 입력 끝----------------------->
             
             
 <!---------------------- 경력정보 입력 ------------------------->
-<%--<div class="card-header">Experience information</div>
+<div class="card-header">Experience information</div>
 <br>
 
 <div class="form-group">
@@ -624,7 +624,7 @@ $(function(){
 		</div>
 		</c:forEach> 
 	</div>
-</div>--%>
+</div>
 <!---------------------- 경력정보 입력 끝------------------------->
 
           		<!-- <input class="btn btn-primary btn-block" type="submit" value="회원가입"> -->
@@ -632,7 +632,10 @@ $(function(){
 
           
 				<!-- <a class="btn btn-primary btn-block" href="login.html">Register</a> -->
-				<button class="btn btn-primary btn-block" >확인</button>
+				<form action="/LoginProcess" method="POST">
+				<input type="hidden" name="userid" value="${freeln.freeln_phone}"/>
+				<input type="hidden" name="userpass" value="${freeln.freeln_pwd}"/>
+				<button class="btn btn-primary btn-block" >수정</button>
 
 			</form>
 			<div class="text-center">
@@ -710,8 +713,5 @@ $(function(){
 			</div>
 		</div>
 	</div>
-       
-
-
 </body>
 </html>
