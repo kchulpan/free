@@ -26,11 +26,16 @@ public class SessionDaoImpl implements SessionDao
 		{
 			sqlSession.selectOne("Freeln.FreeLnSession", map);
 			List<SessionVo> listvo = (List<SessionVo >) map.get("result");
-			if(listvo.get(0) == null)
+			System.out.println("listvo::"+listvo);
+			if(listvo != null)
 			{
-
+				vo = listvo.get(0);
 			}
-			vo = listvo.get(0);
+			else
+			{
+				System.out.println("아이디는 맞는데 비밀번호 틀맀다");
+				return null;
+			}
 			
 		}
 		else if(userid.startsWith("A"))
@@ -38,7 +43,15 @@ public class SessionDaoImpl implements SessionDao
 			sqlSession.selectOne("Admin.AdminSession", map);
 			List<SessionVo> listvo = (List<SessionVo>) map.get("result");
 			System.out.println("가져온값:" +listvo);
-			vo = listvo.get(0);
+			if(listvo != null)
+			{
+				vo = listvo.get(0);
+			}
+			else
+			{
+				System.out.println("아이디는 맞는데 비밀번호 틀맀다");
+				return null;
+			}
 		}
 		else
 		{
