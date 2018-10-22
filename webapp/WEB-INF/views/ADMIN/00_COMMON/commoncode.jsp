@@ -53,9 +53,9 @@
     <!-- 내용넣기! -->
     <div class="reg1">
 	  	<table>
-	 	 <h3>코드관리</h3>
+	 	 <h3>계약관리</h3>
 		  <tr>
-	  		<td><div>코드명:</div></td>
+	  		<td><div>프로젝트신청관리:</div></td>
 				<td><input  type="text" disabled/></td>
 		  <td class="btn1"><input type="button"  value="조회"></td>
 		</tr>
