@@ -247,17 +247,31 @@ a {
 <script>
 	$(document).ready(function() {
 		$("#deletebtn").click(function() {
-			$("#modalform").attr("action", "/ProjectDelete");
-			$("#modalform").submit();
+			if(confirm("정말 삭제하시겠습니까??")==true)
+				{
+					$("#modalform").attr("action", "/ProjectDelete");
+					$("#modalform").submit();			
+				}
+			else
+				{
+					return;
+				}		
 		});
 
 		$("#updatebtn").click(function() {
-			$("#modalform").attr("action", "/ProjectUpdate");
-			$("#modalform").submit();
+			if(confirm("정말 수정하시겠습니까?")==true)
+				{
+					$("#modalform").attr("action", "/ProjectUpdate");
+					$("#modalform").submit();
+				}
+			else
+				{
+					return;
+				}
 		});
 	});
 </script>
- <script>
+<script>
 	$(document).ready(function(){
 		$('#inputModal').addClass('top_menu_active');
 		$('#inputModal').find('i').addClass('menu_icon_active');
@@ -305,7 +319,7 @@ a {
 									<div class="row">
 										<div class="col-sm-12 col-md-11">
 											<div id="dataTable_filter" class="dataTables_filter">
-												<label>프로젝트명: <input type="text"
+												<label>Search: <input type="text"
 													class="form-control form-control-sm"
 													placeholder="프로젝트명을 입력하세요" aria-controls="dataTable"
 													id="myInput" onkeyup="myFunction()" />
@@ -315,7 +329,7 @@ a {
 										<div class="col-sm-12 col-md-1">
 											<button type="button" class="btn btn-primary btn-sm"
 												id="myBtn" data-toggle="modal" data-target="#inputModal">등록</button>
-											<!------------------------------------------------- The Modal 새프로젝트등록 -------------------------------------------------->
+<!------------------------------------------------- The Modal 새프로젝트등록 -------------------------------------------------->
 
 								  <!-- Modal -->
 							  <div class="modal fade" id="inputModal" role="dialog">
@@ -357,7 +371,7 @@ a {
 
 				                	    </div>
 							            <div class="form-group">
-							              <label for="involve_num">투여인원</label>
+							              <label for="involve_num">인원</label>
 							              <input type="text" name="involve_num" class="form-control" id="involve_num" placeholder="투여인원을 입력하세요" required>
 							            </div>
 							            <div class="form-group">
@@ -378,7 +392,7 @@ a {
 										    <input type="text" name="note" class="form-control" id="note">
 										  </div> 
 										  <div class="form-group">
-										    <label for="remark">상세내용</label>
+										    <label for="remark">내용</label>
 										    <textarea name="remark" class="form-control" id="remark" required></textarea>
 										  </div> 
 										    <div class="form-group">
@@ -418,7 +432,7 @@ a {
 													</div>
 												</div>
 											</div>
-											<!------------------------------------------------- The Modal 새프로젝트등록!!!끝 -------------------------------------------------->
+<!------------------------------------------------- The Modal 새프로젝트등록!!!끝 -------------------------------------------------->
 
 <!----------------------------------------- The Modal 수정/삭제 ------------------>
 								  <!-- Modal -->
@@ -459,7 +473,7 @@ a {
 				                	      </select>
 							            </div>
 							            <div class="form-group">
-							              <label for="inv_num">투여인원</label>
+							              <label for="inv_num">인원</label>
 							              <input type="text" class="form-control" id="inv_num" name="involve_num"  placeholder="투여인원을 입력하세요">
 							            </div>
 							            <div class="form-group">
@@ -480,7 +494,7 @@ a {
 										    <input type="text" class="form-control" id="nte" name="note"/>
 										  </div> 
 										   <div class="form-group">
-										    <label for="rmark">상세내용</label>
+										    <label for="rmark">내용</label>
 										    <textarea class="form-control" id="rmark" name="remark"></textarea>
 										  </div> 
 										    <div class="form-group">
@@ -533,14 +547,14 @@ a {
 		 					      <div class="modal-content modal-lg">
 							        <div class="modal-header">
 							          <button type="button" class="close" data-dismiss="modal"></button>
-							          <h5><i class="fa fa-user icon"></i>상세내용</h5>
+							          <h5><i class="fa fa-user icon"></i>상세보기</h5>
 							        </div>
 							        <div class="modal-body">
 							        
 							          <form id="modalform" role="form" action="" method="POST">
 							           
 										  <div class="form-group">
-										    <label for="rmark">상세내용</label>
+										    <label for="rmark">상세보기</label>
 										    <textarea class="form-control" id="rmark" style="height:250px;" name="remark"></textarea>
 										  </div> 
 										    
@@ -557,8 +571,8 @@ a {
 							    </div>
 <!----------------------------------------- The Modal 상세내용 !!! 끝 ------------------>
 
-										</div>
-									</div>
+							</div>
+						</div>
 
 									<div class="row">
 										<div class="col-sm-12">

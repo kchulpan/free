@@ -48,13 +48,13 @@
               </div> -->
               <div class="form-label-group">
                 <input type="text" id="user_id" class="form-control" name="userid" placeholder="id" required="required" autofocus="autofocus">
-                <label for="inputId">아이디를 입력하세요</label>
+                <label for="user_id">아이디를 입력하세요</label>
               </div>
             </div>
             <div class="form-group">
               <div class="form-label-group">
                 <input type="password" id="user_pwd" class="form-control" name="userpass" placeholder="Password" required="required">
-                <label for="inputPassword">비밀번호를 입력하세요</label>
+                <label for="user_pwd">비밀번호를 입력하세요</label>
               </div>
             </div>
 <!--             <div class="form-group">

@@ -276,7 +276,7 @@ $(function() {
  <div class="col-md-12">
  <div class="col-md-3" style="float:left;">
  <label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select id="client_local_1" name="major_tech" class="form-control">
 			<option value="">.NET</option>
 		    <option value=".NET초급">초급</option>
 	        <option value=".NET중급">중급</option>
@@ -287,8 +287,8 @@ $(function() {
 		
 		
 	<div class="col-md-3" style="float:left;">
-	 <label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	 <label for="major_tech1">
+	<select id="major_tech1" name="major_tech" class="form-control">
 			<option value="">C</option>
 		    <option value="C초급">초급</option>
 	        <option value="C중급">중급</option>
@@ -298,8 +298,8 @@ $(function() {
 		</div>
 		 	
 		<div class="col-md-3" style="float:left;">
-		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+		<label for="major_tech2">
+	<select id="major_tech2" name="major_tech" class="form-control" >
 			<option value="">C#</option>
 		    <option value="C#초급">초급</option>
 	        <option value="C#중급">중급</option>
@@ -310,7 +310,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select id="client_local_1" name="major_tech" class="form-control" >
 			<option value="">C++</option>
 		    <option value="C++초급">초급</option>
 	        <option value="C++중급">중급</option>
@@ -323,7 +323,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select id="client_local_1" name="major_tech" class="form-control" >
 			<option value="">JAVA</option>
 		    <option value="JAVA초급">초급</option>
 	        <option value="JAVA중급">중급</option>
@@ -334,7 +334,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select id="client_local_1" name="major_tech" class="form-control" >
 			<option value="">JS</option>
 		    <option value="JS초급">초급</option>
 	        <option value="JS중급">중급</option>
@@ -346,7 +346,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select id="client_local_1" name="major_tech" class="form-control" >
 			<option value="">JSP</option>
 		    <option value="JSP초급">초급</option>
 	        <option value="JSP중급">중급</option>
@@ -357,7 +357,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select id="client_local_1" name="major_tech" class="form-control" >
 			<option value="">SPRING</option>
 		    <option value="SPRING초급">초급</option>
 	        <option value="SPRING중급">중급</option>
@@ -370,7 +370,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select id="client_local_1" name="major_tech" class="form-control" >
 			<option value="">PHP</option>
 		    <option value="PHP초급">초급</option>
 	        <option value="PHP중급">중급</option>
@@ -381,7 +381,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select type="text" id="client_local_1" name="major_tech" class="form-control">
 			<option value="">ORACLE</option>
 		    <option value="ORACLE초급">초급</option>
 	        <option value="ORACLE중급">중급</option>
@@ -392,7 +392,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select type="text" id="client_local_1" name="major_tech" class="form-control" >
 			<option value="">PHP</option>
 		    <option value="MYSQL초급">초급</option>
 	        <option value="MYSQL중급">중급</option>
@@ -403,7 +403,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select type="text" id="client_local_1" name="major_tech" class="form-control">
 			<option value="">MSSQL</option>
 		    <option value="MSSQL">초급</option>
 	        <option value="MSSQL중급">중급</option>
@@ -416,7 +416,7 @@ $(function() {
 		
 		<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select type="text" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select type="text" id="client_local_1" name="major_tech" class="form-control">
 			<option value="">ANDROID</option>
 		    <option value="ANDROID초급">초급</option>
 	        <option value="ANDROID중급">중급</option>
@@ -438,7 +438,7 @@ $(function() {
 <div class="col-md-12">
 	<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-			<select style="display:inline-block; overflow:hidden;" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+			<select style="display:inline-block; overflow:hidden;" id="client_local_1" name="major_tech" class="form-control" >
 					<option  value="">HTML5</option>
 				    <option value=".NET초급">초급</option>
 			        <option value=".NET중급">중급</option>
@@ -448,7 +448,7 @@ $(function() {
 	</div>	
 	<div class="col-md-3" style="float:left;">
 		<label for="client_local_1">
-	<select  style="display:inline-block; overflow:hidden;" id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select  style="display:inline-block; overflow:hidden;" id="client_local_1" name="major_tech" class="form-control" >
 			<option value="">PHOTOSHOP</option>
 		    <option value="PHOTOSHOP초급">초급</option>
 	        <option value="PHOTOSHOP중급">중급</option>
@@ -459,7 +459,7 @@ $(function() {
 		
 	<div class="col-md-3"  style="float:left;">	
 		<label for="client_local_1" >
-	<select id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select id="client_local_1" name="major_tech" class="form-control">
 			<option value="">ILLUST</option>
 		    <option value="ILLUST초급">초급</option>
 	        <option value="ILLUST중급">중급</option>
@@ -469,7 +469,7 @@ $(function() {
      </div>
      <div class="col-md-3"  style="float:left;">	
 		<label for="client_local_1" >
-	<select id="client_local_1" name="client_local_1" class="form-control" placeholder="Client Location" required="required">
+	<select id="client_local_1" name="major_tech" class="form-control">
 			<option value="">CSS</option>
 		    <option value="ILLUST초급">초급</option>
 	        <option value="ILLUST중급">중급</option>
@@ -769,7 +769,7 @@ $(function() {
 		
 		<div class="col-md-12">
 			<div class="form-label-group"> 
-				<input type="text" id="add_tech" name="add_tech" class="form-control" placeholder="add_tech" required="required"/>
+				<input type="text" id="major_tech" name="add_tech" class="form-control"/>
 				<label for="add_tech">항목에 없는 기술정보를 입력하세요</label>
 			</div>
 		</div>
