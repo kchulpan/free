@@ -58,27 +58,24 @@
              ref="sqlSessionFactory"></constructor-arg>    
     </bean>
     
-<!-- MultipartResolver 설정, upload 용량 제한(단위:byte)
-    <bean id="multipartResolver"
+<!-- MultipartResolver 설정, upload 용량 제한(단위:byte) -->
+<!--     <bean id="multipartResolver"
     	  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     	<property name="maxUploadSize" value="100000000"></property>
     	<property name="maxInMemorySize" value="10000000"></property>
-    </bean>
- -->
+    </bean> -->
     
-<!--  Interceptor 를 활용한 로그인 처리
-    공통 인터셉터 
-    <mvc:interceptors>
+  <!-- Interceptor 를 활용한 로그인 처리 --> 
+<!--      <mvc:interceptors>
     	<mvc:interceptor>
-    		<mvc:mapping path="/**"/>  모든파일에 적용 
+    		<mvc:mapping path="/**"/> 
     		<mvc:exclude-mapping path="/resources/**"/>
     		<ref bean="authInterceptor"/>
     	</mvc:interceptor>
-    </mvc:interceptors>
--->
+    </mvc:interceptors> -->
+
     
-<!--    interceptor 에 사용할 클래스 지정
-	<bean id="authInterceptor"
-		   class="com.spring.interceptor.AuthInterceptor" /> 
--->
+    <!-- interceptor 에 사용할 클래스 지정 -->
+<!--  	<bean id="authInterceptor"
+		   class="free.session.interceptor.authInterceptor"/> -->
 </beans>

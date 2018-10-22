@@ -3,17 +3,17 @@
   <display-name>TeamProject</display-name>
    
   <!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
-	<context-param>
+<!-- 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/root-context.xml		
 			</param-value>
-	</context-param>
+	</context-param> -->
 	
     <!-- Creates the Spring Container shared by all Servlets and Filters -->
-	<listener>
+<!-- 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+	</listener> -->
 	
 	 
   <servlet>
