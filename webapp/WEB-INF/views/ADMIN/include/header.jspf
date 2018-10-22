@@ -6,10 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
-	a { text-decoration: none;
+	.hidden_myPage > a { text-decoration: none;
     	color: black;
       }
-    a:hover {color:white;}
+    .hidden_myPage > a:hover {color:white;}
 </style>
 </head>
 <body>

@@ -66,7 +66,9 @@ public class SessionController
 				//career list
 				List<FreelancerCareerVo> freelancerCareer = mainFreelnService.freelancerCareerList(map);
 				mav.addObject("freelancerCareer", freelancerCareer);
-				
+				//freeln_id
+				String freeln_id = freelancerCareer.get(0).getFreeln_id();
+				mav.addObject("freeln_id",freeln_id);
 				//프리랜서 메인 페이지로 가야함
 				mav.setViewName("FREELNMAIN/freelnMain");
 				mav.addObject("vo",vo);

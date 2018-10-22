@@ -91,7 +91,10 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">My Career</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/ModifyMyInfo">My Info</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" 
+              		href="/ModifyMyInfo?freeln_id=${freeln_id}">
+              My Info
+              </a>
             </li>
            <!--  <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="">Chat</a>
@@ -133,7 +136,7 @@
               	<table style="width:350px; height:252.77px; background-color:white; color:#334D5C;">
               		<tr>
               			<td colspan="2" style="padding-top:20px;">
-              				<h4 class="text-uppercase mb-0">${projectList.proj_nm}</h4>
+              				<h4 class="text-uppercase mb-0" style="color:#BA4C63">${projectList.proj_nm}</h4>
               				<%-- <h4  hidden="true">${projectList.proj_id}</h4> --%>
               			</td>
               		</tr>
