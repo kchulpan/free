@@ -16,17 +16,98 @@
 	
 	<!-- js -->
 	<script src="js/include/subpage.js"></script>
+	
+	<!-- 메뉴버튼눌렀을때 HOVER 유지 -->
 	<script>
 	$(document).ready(function(){
 		$('#commoncode').addClass('top_menu_active');
 		$('#commoncode').find('i').addClass('menu_icon_active');
 	});
 	</script>
-<script>
+	<!-- 메뉴버튼눌렀을때 HOVER 유지 끝-->
+	
+<!-- 테이블 내용에서 고객사로 검색 -->
+	<script>
+	function myFunction() {
+	  var input, filter, table, tr, i;
+	  var freeln_nm,career_year, freeln_phone,in_enable_date,freen_mail,hope_place,major_tech;
+	  input = document.getElementById("myInput");
+	  filter = input.value.toUpperCase();
+	  tbody = $('tbody');
+	  tr = $('tr',tbody);
+	  freeln_nm = $('.freeln_nm');
+	  career_year = $('.career_year');
+	  freeln_phone = $('.freeln_phone');
+	  in_enable_date = $('.in_enable_date');
+	  freen_mail = $('.freen_mail');
+	  hope_place = $('.hope_place');
+	  major_tech = $('.major_tech');
 
+	  for (i = 0; i < tr.length; i++) {
+		
+	      if (freeln_nm.eq(i).html().toUpperCase().indexOf(filter) > -1) {
+	    	  tr.eq(i).attr('style','display:');
+	      } else if(career_year.eq(i).html().toUpperCase().indexOf(filter) > -1) {
+	    	  tr.eq(i).attr('style','display:');
+	      } else if(freeln_phone.eq(i).html().toUpperCase().indexOf(filter) > -1) {
+	    	  tr.eq(i).attr('style','display:');
+	      } else if(in_enable_date.eq(i).html().toUpperCase().indexOf(filter) > -1) {
+	    	  tr.eq(i).attr('style','display:');
+	      } else if(freen_mail.eq(i).html().toUpperCase().indexOf(filter) > -1) {
+	    	  tr.eq(i).attr('style','display:');
+	      } else if(hope_place.eq(i).html().toUpperCase().indexOf(filter) > -1) {
+	    	  tr.eq(i).attr('style','display:');
+	      } else if(major_tech.eq(i).html().toUpperCase().indexOf(filter) > -1) {
+	    	  tr.eq(i).attr('style','display:');
+	      } else {
+	    	  tr.eq(i).attr('style','display:none');
+	      }
+	  }
+	}
+	</script>
+<!-- 테이블 내용에서 고객사로 검색 끝-->
 
-
-</script>
+<!-- 테이블 내용에서 컬럼클릭시 정렬 -->
+	<script>
+	function sortTable(n) {
+	  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	  table = document.getElementById("dataTable");
+	  switching = true;
+	  dir = "asc"; 
+	  while (switching) {
+	    switching = false;
+	    rows = table.rows;
+	    for (i = 1; i < (rows.length - 1); i++) {
+	
+	      shouldSwitch = false;
+	      x = rows[i].getElementsByTagName("TD")[n];
+	      y = rows[i + 1].getElementsByTagName("TD")[n];
+	      if (dir == "asc") {
+	        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+	          shouldSwitch= true;
+	          break;
+	        }
+	      } else if (dir == "desc") {
+	        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+	          shouldSwitch = true;
+	          break;
+	        }
+	      }
+	    }
+	    if (shouldSwitch) {
+	      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+	      switching = true;
+	      switchcount ++;      
+	    } else {
+	      if (switchcount == 0 && dir == "asc") {
+	        dir = "desc";
+	        switching = true;
+	      }
+	    }
+	  }
+	}
+	</script>
+<!-- 테이블 내용에서 컬럼클릭시 정렬 끝-->
 </head>
 <!-------------------------------- body ---------------------------------------->
 <body>

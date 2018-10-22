@@ -18,8 +18,8 @@
          
          
          <result property="client_nm"       column="CLIENT_NM"        javaType="string"/>
-         <result property="client_local_1"  column="CLIENT_LOCAL_1"   javaType="string"/>
-         <result property="client_local_2"  column="CLIENT_LOCAL_2"   javaType="string"/>
+         <result property="client_local_1"  column="CLIENT_LOCA_1"   javaType="string"/>
+         <result property="client_local_2"  column="CLIENT_LOCA_2"   javaType="string"/>
          <result property="task"            column="TASK"             javaType="string"/>
          <result property="duty"            column="DUTY"             javaType="string"/>
          <result property="work_str_date"   column="WORK_STR_DATA"    javaType="string"/>
@@ -56,6 +56,8 @@
 		#{hope_money,        mode=IN,       jdbcType=VARCHAR},
 		#{major_tech,        mode=IN,       jdbcType=VARCHAR},
 		#{client_nm,         mode=IN,       jdbcType=VARCHAR},
+		#{client_local_1,         mode=IN,       jdbcType=VARCHAR},
+		#{client_local_2,         mode=IN,       jdbcType=VARCHAR},
 		
 		#{task,              mode=IN,       jdbcType=VARCHAR},
 		#{duty,              mode=IN,       jdbcType=VARCHAR},

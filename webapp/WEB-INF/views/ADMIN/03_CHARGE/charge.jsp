@@ -212,31 +212,7 @@ $(document).ready(function(){
 });
 	
 </script>
-<!-- <script>
-  window.onload = function() 
-  {
-	  // 대상을 찾는다
-	  var charge_a = document.querySelectorAll('tbody a');
-	  alert(charge_a);
-	  console.log(charge_a);
-	  for(var i=0;i<charge_a.length;i++) 
-	  {
-		  // click 이벤트 연결한다
-		  charge_a[i].onclick = function(e) {
- 			  e.preventDefault();
-			  e.stopPropagation();
-			  alert('charge_a.onclick:' + this.href); 
-			  $("#charge_nm").html("ajax를 통해 얻어온 id에 해당하는 값");
-              $("#company_id").html("ajax를 통해 얻어온 id에 해당하는 값");
 
-              //modal을 띄워준다.  
-
-			  $("#inputModal2").modal('show');
-
-			}
-	 };
-  }
-</script> -->
 </head>
 <!-------------------------------- body ---------------------------------------->
 <body>
